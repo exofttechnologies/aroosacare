@@ -1,0 +1,89 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  }
+  
+  body {
+    background-color: #FAF6EF;
+    color: #1E293B;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom Utilities for Glassmorphism & Soft Effects */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.glass-nav {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.6);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(240, 249, 255, 0.8);
+}
+
+/* Floating Bubbles Effect */
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.9), rgba(186, 230, 253, 0.4) 60%, rgba(56, 189, 248, 0.2));
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.5), inset -2px -2px 6px rgba(14, 165, 233, 0.2);
+  pointer-events: none;
+  animation: floatUp 12s infinite linear;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(100px) scale(0.8);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.7;
+  }
+  80% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-400px) scale(1.1);
+    opacity: 0;
+  }
+}
+
+/* Soft Gradient Glow */
+.bg-radial-glow {
+  background: radial-gradient(circle at 50% 50%, rgba(186, 230, 253, 0.4) 0%, rgba(250, 246, 239, 0) 70%);
+}
+
+.bg-hero-gradient {
+  background: linear-gradient(180deg, rgba(240, 249, 255, 0.2) 0%, rgba(255, 253, 249, 0.8) 100%);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F0F9FF;
+}
+::-webkit-scrollbar-thumb {
+  background: #BAE6FD;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #7DD3FC;
+}
