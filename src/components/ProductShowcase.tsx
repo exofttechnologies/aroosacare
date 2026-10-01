@@ -170,7 +170,7 @@ export const ProductShowcase: React.FC<ProductShowcaseProps> = ({ onOrderNow }) 
       {/* PRODUCT IMAGE — floating on clouds, flush to bottom */}
       <div className="relative z-10 mt-4 sm:mt-6 w-full flex justify-center items-end">
         <img
-          src="/images/about_product_part.png"
+          src={`${import.meta.env.BASE_URL}images/about_product_part.png`}
           alt="Aroosa Wet Wipes 72-pack floating on soft clouds"
           className="w-full max-w-2xl lg:max-w-3xl xl:max-w-4xl h-auto object-contain select-none"
           style={{

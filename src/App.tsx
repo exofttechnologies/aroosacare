@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
+import { CardShowcaseSection } from './components/CardShowcaseSection';
 import { ProductShowcase } from './components/ProductShowcase';
 import { ProductFeatures } from './components/ProductFeatures';
 import { OurStory } from './components/OurStory';
@@ -35,6 +36,9 @@ export function App() {
           if (el) el.scrollIntoView({ behavior: 'smooth' });
         }}
       />
+
+      {/* Dedicated Card Showcase Section — Exact Given Card Style & Multiple Cards Carousel */}
+      <CardShowcaseSection />
 
       {/* Plain Text Product Intro — full bleed, no cards, clean editorial typography */}
       <section className="bg-[#FAF8F5] px-5 sm:px-8 lg:px-0 py-16 sm:py-20 lg:py-28">

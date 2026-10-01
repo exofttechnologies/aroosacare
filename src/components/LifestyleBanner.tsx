@@ -7,7 +7,7 @@ export const LifestyleBanner: React.FC = () => {
       
       {/* Background Banner Image */}
       <img
-        src="/images/baby_lifestyle_banner.jpg"
+        src={`${import.meta.env.BASE_URL}images/baby_lifestyle_banner.jpg`}
         alt="Baby care clouds and teddy bear visual advertisement"
         className="w-full h-full object-cover object-center scale-105 transition-transform duration-1000"
       />

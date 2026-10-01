@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, ChevronRight } from 'lucide-react';
+import { ArrowRight, ChevronRight, Sparkles } from 'lucide-react';
 
 interface HeroProps {
   onExploreProducts?: () => void;
@@ -13,30 +13,39 @@ export const Hero: React.FC<HeroProps> = ({ onExploreProducts, onDiscoverStory }
       {/* Background Hero Image (aroosa_mobile_hero.png on mobile and aroosa_hero_bg.png on desktop) */}
       <div className="absolute inset-0 z-0">
         <picture className="w-full h-full block">
-          <source media="(max-width: 768px)" srcSet="/images/aroosa_mobile_hero.png" />
+          <source media="(max-width: 768px)" srcSet={`${import.meta.env.BASE_URL}images/aroosa_mobile_hero.png`} />
           <img
-            src="/images/aroosa_hero_bg.png"
+            src={`${import.meta.env.BASE_URL}images/aroosa_hero_bg.png`}
             alt="Aroosa Wet Wipes"
             className="w-full h-full object-cover object-top sm:object-center select-none"
           />
         </picture>
         
-        {/* Mobile: Top gradient for header contrast and bottom gradient for text & CTA buttons contrast */}
-        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-slate-950/65 via-slate-950/20 to-transparent lg:hidden pointer-events-none" />
+        {/* Mobile Gradients */}
+        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-slate-950/70 via-slate-950/25 to-transparent lg:hidden pointer-events-none" />
         <div className="absolute inset-x-0 bottom-0 h-3/5 bg-gradient-to-t from-slate-950/95 via-slate-950/65 to-transparent lg:hidden pointer-events-none" />
 
         {/* Desktop Gradients */}
-        <div className="hidden lg:block absolute inset-0 bg-gradient-to-r from-sky-950/45 via-sky-900/20 to-transparent pointer-events-none max-w-2xl" />
+        <div className="hidden lg:block absolute inset-0 bg-gradient-to-r from-sky-950/50 via-sky-900/25 to-transparent pointer-events-none max-w-2xl" />
         <div className="hidden lg:block absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#FAF8F5]/90 via-[#FAF8F5]/30 to-transparent pointer-events-none" />
       </div>
 
       {/* Hero Content Container */}
       <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 w-full">
         
-        {/* MOBILE VIEW (Bottom-aligned, refined typography, 2 stacked pill buttons) */}
+        {/* MOBILE VIEW (Logo, Headline, Subtitle, 2 stacked pill buttons) */}
         <div className="lg:hidden flex flex-col justify-end space-y-3.5 max-w-md mx-auto text-left">
           
-          {/* Main Headline: Pure · Soft · Gentle with Editorial Serif Font */}
+          {/* Brand Logo on Hero */}
+          <div className="inline-block mb-1">
+            <img
+              src={`${import.meta.env.BASE_URL}images/Aroosa_logo_light_blue_transparent.png`}
+              alt="Aroosa"
+              className="h-8 sm:h-9 w-auto object-contain drop-shadow-md select-none"
+            />
+          </div>
+
+          {/* Main Headline: Pure · Soft · Gentle */}
           <h1 className="text-3xl sm:text-4xl font-serif font-normal text-white tracking-tight leading-[1.15] drop-shadow-sm">
             Pure · Soft · Gentle
           </h1>
@@ -46,9 +55,9 @@ export const Hero: React.FC<HeroProps> = ({ onExploreProducts, onDiscoverStory }
             Aroosa baby wipes are made with 99% pure water, chamomile, vitamin E and aloe — keeping your baby's skin clean, soft and protected.
           </p>
 
-          {/* Two stacked pill action buttons matching the mockup image */}
+          {/* Two stacked pill action buttons */}
           <div className="pt-2 space-y-3 w-full">
-            {/* Primary Action Button (Bright Neon Lime Pill with black text and right chevron) */}
+            {/* Primary Action Button */}
             <a
               href="#products"
               onClick={onExploreProducts}
@@ -58,7 +67,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreProducts, onDiscoverStory }
               <ChevronRight className="w-4 h-4 stroke-[2.5] text-slate-950 group-hover:translate-x-1 transition-transform" />
             </a>
 
-            {/* Secondary Action Button (Dark Slate Pill with border and right chevron as in mockup) */}
+            {/* Secondary Action Button */}
             <a
               href="#story"
               onClick={onDiscoverStory}
@@ -74,16 +83,25 @@ export const Hero: React.FC<HeroProps> = ({ onExploreProducts, onDiscoverStory }
         <div className="hidden lg:grid grid-cols-12 gap-8 items-center">
           <div className="col-span-7 xl:col-span-6 space-y-6 text-left">
 
+            {/* Exact Brand Logo on Hero */}
+            <div className="inline-block">
+              <img
+                src={`${import.meta.env.BASE_URL}images/Aroosa_logo_light_blue_transparent.png`}
+                alt="Aroosa"
+                className="h-10 xl:h-12 w-auto object-contain drop-shadow-lg select-none"
+              />
+            </div>
+
             {/* Main Headline: Pure · Soft · Gentle */}
             <h1 className="text-6xl lg:text-[76px] font-serif font-normal text-white tracking-tight leading-[1.08] drop-shadow-sm">
               Pure · Soft · Gentle
             </h1>
 
             <p className="text-base lg:text-lg text-white/95 max-w-xl font-normal leading-relaxed drop-shadow-xs">
-              Aroosa baby wipes are made with 99% water, chamomile, vitamin E and aloe — keeping your baby's skin clean, soft and protected.
+              Aroosa baby wipes are made with 99% pure water, chamomile, vitamin E and aloe — keeping your baby's skin clean, soft and protected.
             </p>
 
-            <div className="pt-2">
+            <div className="pt-2 flex items-center gap-4">
               <a
                 href="#products"
                 onClick={onExploreProducts}
@@ -94,6 +112,30 @@ export const Hero: React.FC<HeroProps> = ({ onExploreProducts, onDiscoverStory }
                   <ArrowRight className="w-4 h-4 stroke-[2.5]" />
                 </span>
               </a>
+
+              <a
+                href="#story"
+                onClick={onDiscoverStory}
+                className="inline-flex items-center px-6 py-2.5 rounded-full bg-white/15 hover:bg-white/25 active:scale-95 text-white font-medium text-base backdrop-blur-md border border-white/25 shadow-lg transition-all duration-200"
+              >
+                <span>Our Story</span>
+              </a>
+            </div>
+
+            {/* Trust feature tags below button */}
+            <div className="pt-4 flex items-center gap-6 text-xs text-white/85 font-medium">
+              <div className="flex items-center gap-1.5">
+                <Sparkles className="w-4 h-4 text-[#E3F942]" />
+                <span>99.99% Pure Water</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-white/40" />
+                <span>Dermatologically Tested</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-white/40" />
+                <span>100% Cotton Feel</span>
+              </div>
             </div>
           </div>
 

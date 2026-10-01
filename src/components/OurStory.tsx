@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heart, ArrowRight, Quote, CheckCircle2 } from 'lucide-react';
+import { Heart, Quote } from 'lucide-react';
 
 
 interface OurStoryProps {
@@ -21,7 +21,7 @@ export const OurStory: React.FC<OurStoryProps> = () => {
             <div>
               <div className="relative rounded-3xl overflow-hidden shadow-md border border-slate-200/80">
                 <img
-                  src="/images/story_baby_lifestyle.jpg"
+                  src={`${import.meta.env.BASE_URL}images/story_baby_lifestyle.jpg`}
                   alt="Mother tenderly holding baby's hand"
                   className="w-full h-auto object-cover hover:scale-103 transition-transform duration-700"
                 />
@@ -83,17 +83,8 @@ export const OurStory: React.FC<OurStoryProps> = () => {
             </div>
 
             {/* Dribbble Style Pill Button */}
-            <div>
-              <div className="pt-2">
-                <a
-                  href="#why-us"
-                  className="inline-flex items-center justify-center px-7 py-3.5 rounded-full bg-slate-900 hover:bg-slate-800 text-white font-medium text-xs sm:text-sm shadow-xs hover:shadow-md transition-all duration-200 group"
-                >
-                  <span>Read Our Full Story</span>
-                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                </a>
-              </div>
-            </div>
+
+
 
           </div>
 

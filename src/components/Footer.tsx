@@ -11,7 +11,7 @@ export const Footer: React.FC = () => {
           <div className="lg:col-span-2 space-y-4 text-left">
             <a href="#hero" className="inline-flex items-center group">
               <img
-                src="/images/Aroosa_logo_light_blue_transparent.png"
+                src={`${import.meta.env.BASE_URL}images/Aroosa_logo_light_blue_transparent.png`}
                 alt="Aroosa Care"
                 className="h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
               />
