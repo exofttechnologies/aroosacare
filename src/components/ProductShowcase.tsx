@@ -23,6 +23,14 @@ export const ProductShowcase: React.FC<ProductShowcaseProps> = ({ onOrderNow }) 
       }}
     >
 
+      {/* Top Gradient Blend from #FAF8F5 into the vibrant blue */}
+      <div
+        className="absolute top-0 left-0 right-0 h-28 sm:h-36 pointer-events-none z-20"
+        style={{
+          background: 'linear-gradient(to bottom, rgba(250,248,245,1) 0%, rgba(250,248,245,0.7) 40%, rgba(250,248,245,0) 100%)',
+        }}
+      />
+
       {/* Ambient Sunburst Light Effect top-right */}
       <div
         className="absolute top-0 right-0 w-[55%] h-[55%] pointer-events-none"
@@ -32,7 +40,7 @@ export const ProductShowcase: React.FC<ProductShowcaseProps> = ({ onOrderNow }) 
       />
 
       {/* Content container */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 pt-14 sm:pt-20 pb-0">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 pt-20 sm:pt-28 pb-0">
 
         {/* TOP ROW: Brand tag + headline + description (left-aligned) */}
         <div className="max-w-lg lg:max-w-xl">

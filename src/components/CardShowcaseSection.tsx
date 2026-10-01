@@ -121,6 +121,10 @@ export const CardShowcaseSection: React.FC = () => {
       {/* Ambient background studio lighting glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[720px] h-[720px] bg-gradient-to-tr from-teal-200/20 via-sky-100/35 to-amber-100/25 rounded-full blur-3xl pointer-events-none" />
 
+      {/* Top & Bottom blends into surrounding sections */}
+      <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-[#FAF8F5] via-[#FAF8F5]/80 to-transparent pointer-events-none z-10" />
+      <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#FAF8F5] via-[#FAF8F5]/80 to-transparent pointer-events-none z-10" />
+
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         
         {/* Section Header */}
