@@ -23,11 +23,14 @@ export const Hero: React.FC<HeroProps> = ({ onExploreProducts, onDiscoverStory }
         
         {/* Mobile Gradients */}
         <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-slate-950/70 via-slate-950/25 to-transparent lg:hidden pointer-events-none" />
-        <div className="absolute inset-x-0 bottom-0 h-3/5 bg-gradient-to-t from-slate-950/95 via-slate-950/65 to-transparent lg:hidden pointer-events-none" />
+        <div className="absolute inset-x-0 bottom-8 h-3/5 bg-gradient-to-t from-slate-950/85 via-slate-950/50 to-transparent lg:hidden pointer-events-none" />
 
         {/* Desktop Gradients */}
         <div className="hidden lg:block absolute inset-0 bg-gradient-to-r from-sky-950/50 via-sky-900/25 to-transparent pointer-events-none max-w-2xl" />
-        <div className="hidden lg:block absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#FAF8F5]/90 via-[#FAF8F5]/30 to-transparent pointer-events-none" />
+
+        {/* Bottom Blend Gradient (Mobile & Desktop): Smoothly melts into #FAF8F5 with a soft ambient drop shadow */}
+        <div className="absolute inset-x-0 bottom-0 h-28 sm:h-36 lg:h-40 bg-gradient-to-t from-[#FAF8F5] via-[#FAF8F5]/85 to-transparent pointer-events-none z-10" />
+        <div className="absolute inset-x-0 bottom-0 h-4 shadow-[0_20px_35px_rgba(0,0,0,0.14)] pointer-events-none z-10" />
       </div>
 
       {/* Hero Content Container */}

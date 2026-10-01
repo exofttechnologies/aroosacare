@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
+import { ArrowRight, Pause, Play } from 'lucide-react';
 
 interface CardItem {
   id: string;
@@ -47,17 +47,19 @@ const CARDS: CardItem[] = [
 
 export const CardShowcaseSection: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [isHovered, setIsHovered] = useState(false);
+  const [isStopped, setIsStopped] = useState(false);
   const touchStartX = useRef<number | null>(null);
+  const mouseStartX = useRef<number | null>(null);
+  const isDragging = useRef<boolean>(false);
 
-  // Auto-slide every 6 seconds unless hovered
+  // Auto-scroll every 3.5 seconds; stopped when user taps to pause
   useEffect(() => {
-    if (isHovered) return;
+    if (isStopped) return;
     const interval = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % CARDS.length);
-    }, 6000);
+    }, 3500);
     return () => clearInterval(interval);
-  }, [isHovered]);
+  }, [isStopped]);
 
   const handlePrev = () => {
     setActiveIndex((prev) => (prev - 1 + CARDS.length) % CARDS.length);
@@ -67,6 +69,12 @@ export const CardShowcaseSection: React.FC = () => {
     setActiveIndex((prev) => (prev + 1) % CARDS.length);
   };
 
+  // Toggle stop on tap/click
+  const handleToggleStop = () => {
+    setIsStopped((prev) => !prev);
+  };
+
+  // Touch Swipe Handlers (Mobile)
   const handleTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.touches[0].clientX;
   };
@@ -74,12 +82,35 @@ export const CardShowcaseSection: React.FC = () => {
   const handleTouchEnd = (e: React.TouchEvent) => {
     if (touchStartX.current === null) return;
     const diff = touchStartX.current - e.changedTouches[0].clientX;
-    if (diff > 45) {
+    if (diff > 35) {
       handleNext();
-    } else if (diff < -45) {
+    } else if (diff < -35) {
       handlePrev();
     }
     touchStartX.current = null;
+  };
+
+  // Mouse Drag Swipe Handlers (Desktop)
+  const handleMouseDown = (e: React.MouseEvent) => {
+    mouseStartX.current = e.clientX;
+    isDragging.current = true;
+  };
+
+  const handleMouseUp = (e: React.MouseEvent) => {
+    if (!isDragging.current || mouseStartX.current === null) return;
+    const diff = mouseStartX.current - e.clientX;
+    if (diff > 40) {
+      handleNext();
+    } else if (diff < -40) {
+      handlePrev();
+    }
+    isDragging.current = false;
+    mouseStartX.current = null;
+  };
+
+  const handleMouseLeave = () => {
+    isDragging.current = false;
+    mouseStartX.current = null;
   };
 
   const activeCard = CARDS[activeIndex];
@@ -93,7 +124,7 @@ export const CardShowcaseSection: React.FC = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         
         {/* Section Header */}
-        <div className="max-w-2xl mx-auto mb-10 sm:mb-14">
+        <div className="max-w-2xl mx-auto mb-8 sm:mb-12">
           <p className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.25em] text-teal-800 mb-2.5">
             Aroosa Care · Product Showcase
           </p>
@@ -101,20 +132,25 @@ export const CardShowcaseSection: React.FC = () => {
             Pure Care for Little Ones
           </h2>
           <p className="text-xs sm:text-sm text-slate-600 font-normal leading-relaxed mt-3 max-w-lg mx-auto">
-            Swipe through our pure cotton, plant-based fabric, and dermatologist-tested baby wipes.
+            Swipe or auto-browse through our pure cotton, plant-based fabric, and dermatologist-tested baby wipes.
           </p>
         </div>
 
-        {/* 3D Perspective Card Showcase with Side Cards peeking */}
+        {/* 3D Perspective Card Showcase with Side Cards peeking (NO scroll buttons, auto-scrolls, stops on tap, swipeable) */}
         <div
-          className="relative w-full max-w-sm sm:max-w-md lg:max-w-[450px] mx-auto"
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
+          className="relative w-full max-w-sm sm:max-w-md lg:max-w-[450px] mx-auto cursor-grab active:cursor-grabbing"
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
+          onMouseDown={handleMouseDown}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseLeave}
         >
           {/* Card Viewport */}
-          <div className="relative h-[490px] sm:h-[550px] md:h-[580px] w-full flex items-center justify-center">
+          <div
+            className="relative h-[490px] sm:h-[550px] md:h-[580px] w-full flex items-center justify-center"
+            onClick={handleToggleStop}
+            title={isStopped ? "Tap to resume auto-scroll" : "Tap to pause auto-scroll"}
+          >
             {CARDS.map((card, index) => {
               let position = index - activeIndex;
               if (position < -1) position += CARDS.length;
@@ -129,9 +165,15 @@ export const CardShowcaseSection: React.FC = () => {
               return (
                 <div
                   key={card.id}
-                  onClick={() => {
-                    if (isPrev) handlePrev();
-                    if (isNext) handleNext();
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    if (isPrev) {
+                      handlePrev();
+                    } else if (isNext) {
+                      handleNext();
+                    } else {
+                      handleToggleStop();
+                    }
                   }}
                   style={{
                     transform: isActive
@@ -152,7 +194,8 @@ export const CardShowcaseSection: React.FC = () => {
                     <img
                       src={card.imageSrc}
                       alt={card.title}
-                      className="w-full h-full object-cover object-center select-none"
+                      className="w-full h-full object-cover object-center select-none pointer-events-none"
+                      draggable={false}
                     />
                     {/* Subtle glass sheen overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-white/10 pointer-events-none" />
@@ -162,44 +205,50 @@ export const CardShowcaseSection: React.FC = () => {
             })}
           </div>
 
-          {/* Previous / Next Arrow Chevrons */}
-          <button
-            type="button"
-            onClick={handlePrev}
-            aria-label="Previous Card"
-            className="absolute left-[-16px] sm:left-[-24px] top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-white/95 hover:bg-white text-slate-900 border border-slate-200/90 shadow-xl flex items-center justify-center transition-all active:scale-95 cursor-pointer"
-          >
-            <ChevronLeft className="w-5 h-5 stroke-[2.5]" />
-          </button>
+          {/* Dots Indicator & Play/Pause Status Pill */}
+          <div className="flex flex-col items-center justify-center mt-6 space-y-3 relative z-20">
+            {/* Dots */}
+            <div className="flex items-center space-x-2">
+              {CARDS.map((_, idx) => (
+                <button
+                  key={idx}
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setActiveIndex(idx);
+                  }}
+                  aria-label={`Go to card ${idx + 1}`}
+                  className={`transition-all duration-300 rounded-full cursor-pointer ${
+                    activeIndex === idx
+                      ? 'w-8 h-2.5 bg-teal-700 shadow-[0_0_10px_rgba(13,148,136,0.5)]'
+                      : 'w-2.5 h-2.5 bg-slate-300 hover:bg-slate-400'
+                  }`}
+                />
+              ))}
+            </div>
 
-          <button
-            type="button"
-            onClick={handleNext}
-            aria-label="Next Card"
-            className="absolute right-[-16px] sm:right-[-24px] top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-white/95 hover:bg-white text-slate-900 border border-slate-200/90 shadow-xl flex items-center justify-center transition-all active:scale-95 cursor-pointer"
-          >
-            <ChevronRight className="w-5 h-5 stroke-[2.5]" />
-          </button>
-
-          {/* Dots Indicator */}
-          <div className="flex items-center justify-center space-x-2 mt-6 relative z-20">
-            {CARDS.map((_, idx) => (
-              <button
-                key={idx}
-                type="button"
-                onClick={() => setActiveIndex(idx)}
-                aria-label={`Go to card ${idx + 1}`}
-                className={`transition-all duration-300 rounded-full cursor-pointer ${
-                  activeIndex === idx
-                    ? 'w-8 h-2.5 bg-teal-700 shadow-[0_0_10px_rgba(13,148,136,0.5)]'
-                    : 'w-2.5 h-2.5 bg-slate-300 hover:bg-slate-400'
-                }`}
-              />
-            ))}
+            {/* Subtle Tap-to-Pause / Resume Status Pill */}
+            <button
+              type="button"
+              onClick={handleToggleStop}
+              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-medium text-slate-500 hover:text-slate-800 bg-white/70 hover:bg-white border border-slate-200 shadow-xs transition-all cursor-pointer"
+            >
+              {isStopped ? (
+                <>
+                  <Play className="w-3 h-3 text-teal-700 fill-teal-700" />
+                  <span>Paused · Tap card to play</span>
+                </>
+              ) : (
+                <>
+                  <Pause className="w-3 h-3 text-slate-500 fill-slate-500" />
+                  <span>Auto-scrolling · Tap card to stop</span>
+                </>
+              )}
+            </button>
           </div>
 
           {/* Active Card Details Caption below Carousel */}
-          <div className="mt-5 text-center px-4 max-w-sm mx-auto">
+          <div className="mt-4 text-center px-4 max-w-sm mx-auto">
             <span className="inline-block text-[10px] font-bold tracking-widest text-teal-800 uppercase bg-teal-50 px-3 py-1 rounded-full border border-teal-200 mb-2">
               {activeCard.badgeTag}
             </span>
@@ -212,7 +261,7 @@ export const CardShowcaseSection: React.FC = () => {
           </div>
 
           {/* Explore Product Quick Link */}
-          <div className="mt-6">
+          <div className="mt-5">
             <a
               href="#products"
               className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-teal-800 hover:text-teal-950 transition-colors group"
