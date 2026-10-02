@@ -21,8 +21,8 @@ export const OurStory: React.FC<OurStoryProps> = () => {
             <div>
               <div className="relative rounded-3xl overflow-hidden shadow-md border border-slate-200/80">
                 <img
-                  src={`${import.meta.env.BASE_URL}images/story_baby_lifestyle.jpg`}
-                  alt="Mother tenderly holding baby's hand"
+                  src={`${import.meta.env.BASE_URL}images/mother_tenderly_hold_baby.jpg`}
+                  alt="Mother tenderly holding newborn baby"
                   className="w-full h-auto object-cover hover:scale-103 transition-transform duration-700"
                 />
               </div>
