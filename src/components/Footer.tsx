@@ -234,7 +234,7 @@ export const Footer: React.FC = () => {
                 {/* Redesigned Instagram Icon (Premium gradient ring & camera badge) */}
                 <li>
                   <a
-                    href="https://instagram.com/thearoosa"
+                    href="https://www.instagram.com/aroosacare/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2.5 hover:text-white transition-colors group"
@@ -248,7 +248,10 @@ export const Footer: React.FC = () => {
                         </svg>
                       </div>
                     </div>
-                    <span className="font-medium text-white group-hover:text-sky-200 transition-colors">Instagram</span>
+                    <div>
+                      <span className="font-medium text-white group-hover:text-sky-200 transition-colors block leading-tight">Instagram</span>
+                      <span className="text-[10px] text-sky-300/80 font-normal">@aroosacare</span>
+                    </div>
                   </a>
                 </li>
 
