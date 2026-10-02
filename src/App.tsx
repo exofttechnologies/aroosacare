@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Preloader } from './components/Preloader';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { CardShowcaseSection } from './components/CardShowcaseSection';
@@ -21,6 +22,9 @@ export function App() {
 
   return (
     <div className="min-h-screen bg-[#FAF8F5] text-slate-900 flex flex-col font-sans selection:bg-teal-100 selection:text-teal-900">
+
+      {/* Elegant Brand Preloader */}
+      <Preloader minDuration={1800} />
 
       {/* Navbar */}
       <Navbar onOpenSearch={() => setIsSearchOpen(true)} />
