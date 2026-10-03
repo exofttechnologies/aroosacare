@@ -48,7 +48,7 @@ export const ProductShowcase: React.FC<ProductShowcaseProps> = ({ onOrderNow }) 
           {/* Brand name */}
           <div className="flex items-center gap-1.5 mb-4">
             <span className="text-white/95 text-base sm:text-lg font-semibold tracking-tight">
-              ✦ Aroosa
+              Aroosa
             </span>
           </div>
 

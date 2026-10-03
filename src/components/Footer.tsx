@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, Phone, Mail, Check, Facebook, Twitter, Linkedin, Sparkles } from 'lucide-react';
+import { ArrowRight, Phone, Mail, Check, Facebook, Twitter, Linkedin } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   const [topEmail, setTopEmail] = useState('');
@@ -37,8 +37,7 @@ export const Footer: React.FC = () => {
           
           {/* Left: Headline & Subtitle with new modern typography */}
           <div className="text-left max-w-xl">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/80 border border-sky-200/80 text-[#002D3D] text-[11px] font-semibold uppercase tracking-wider mb-2.5 shadow-2xs">
-              <Sparkles className="w-3 h-3 text-sky-600" />
+            <div className="inline-flex items-center px-3.5 py-1 rounded-full bg-white/80 border border-sky-200/80 text-[#002D3D] text-[11px] font-semibold uppercase tracking-wider mb-2.5 shadow-2xs">
               <span>Join The Aroosa Family</span>
             </div>
             <h3 className="text-3xl sm:text-4xl lg:text-[40px] font-display font-bold text-[#002D3D] tracking-tight leading-tight">

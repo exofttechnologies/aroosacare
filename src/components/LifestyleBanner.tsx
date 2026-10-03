@@ -1,5 +1,4 @@
 import React from 'react';
-import { Sparkles } from 'lucide-react';
 
 export const LifestyleBanner: React.FC = () => {
   return (
@@ -29,8 +28,7 @@ export const LifestyleBanner: React.FC = () => {
       {/* Centered Overlay Content */}
       <div className="relative z-20 h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center">
         <div className="max-w-xl bg-white/85 backdrop-blur-md p-8 sm:p-12 rounded-3xl border border-white/90 shadow-2xl text-left space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-100/90 text-teal-800 text-xs font-semibold uppercase tracking-wider">
-            <Sparkles className="w-3.5 h-3.5 text-teal-600" />
+          <div className="inline-flex items-center px-3.5 py-1.5 rounded-full bg-teal-100/90 text-teal-800 text-xs font-semibold uppercase tracking-wider">
             <span>PURE COMFORT</span>
           </div>
 

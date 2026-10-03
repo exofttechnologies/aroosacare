@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { ArrowRight, Pause, Play } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 interface CardItem {
   id: string;
@@ -209,9 +209,8 @@ export const CardShowcaseSection: React.FC = () => {
             })}
           </div>
 
-          {/* Dots Indicator & Play/Pause Status Pill */}
-          <div className="flex flex-col items-center justify-center mt-6 space-y-3 relative z-20">
-            {/* Dots */}
+          {/* Dots Indicator */}
+          <div className="flex items-center justify-center mt-6 relative z-20">
             <div className="flex items-center space-x-2">
               {CARDS.map((_, idx) => (
                 <button
@@ -230,25 +229,6 @@ export const CardShowcaseSection: React.FC = () => {
                 />
               ))}
             </div>
-
-            {/* Subtle Tap-to-Pause / Resume Status Pill */}
-            <button
-              type="button"
-              onClick={handleToggleStop}
-              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-medium text-slate-500 hover:text-slate-800 bg-white/70 hover:bg-white border border-slate-200 shadow-xs transition-all cursor-pointer"
-            >
-              {isStopped ? (
-                <>
-                  <Play className="w-3 h-3 text-teal-700 fill-teal-700" />
-                  <span>Paused · Tap card to play</span>
-                </>
-              ) : (
-                <>
-                  <Pause className="w-3 h-3 text-slate-500 fill-slate-500" />
-                  <span>Auto-scrolling · Tap card to stop</span>
-                </>
-              )}
-            </button>
           </div>
 
           {/* Active Card Details Caption below Carousel */}

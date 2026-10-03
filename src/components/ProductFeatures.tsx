@@ -1,5 +1,5 @@
 import React from 'react';
-import { Feather, Sparkles, Heart, Clock, RefreshCw, Layers } from 'lucide-react';
+import { Feather, Sparkles, ShieldCheck, Clock, RefreshCw, Layers } from 'lucide-react';
 
 
 export const ProductFeatures: React.FC = () => {
@@ -15,7 +15,7 @@ export const ProductFeatures: React.FC = () => {
       description: 'Formulated for mild, comforting cleanups during diaper changes, meal times, and messy play.',
     },
     {
-      icon: Heart,
+      icon: ShieldCheck,
       title: 'Baby-Friendly Care',
       description: 'Created specifically with delicate newborn and infant skin needs in mind.',
     },

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heart, Quote } from 'lucide-react';
+import { Quote } from 'lucide-react';
 
 
 interface OurStoryProps {
@@ -50,8 +50,7 @@ export const OurStory: React.FC<OurStoryProps> = () => {
           <div className="lg:col-span-6 space-y-6 text-left">
             
             <div>
-              <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-slate-100 text-slate-800 text-[11px] font-semibold uppercase tracking-wider">
-                <Heart className="w-3.5 h-3.5 text-sky-500 fill-sky-200" />
+              <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-slate-100 text-slate-800 text-[11px] font-semibold uppercase tracking-wider">
                 <span>OUR BRAND JOURNEY</span>
               </div>
             </div>
