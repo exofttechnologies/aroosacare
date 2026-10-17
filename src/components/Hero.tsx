@@ -74,7 +74,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreProducts, onDiscoverStory, 
             <button
               type="button"
               onClick={handleOrder}
-              className="w-full py-4 px-6 rounded-full bg-[#25D366] hover:bg-[#20bd5a] active:scale-[0.98] text-white font-bold text-sm sm:text-base shadow-xl flex items-center justify-between transition-all group cursor-pointer"
+              className="w-full py-4 px-6 rounded-full bg-black hover:bg-neutral-900 active:scale-[0.98] text-white font-bold text-sm sm:text-base shadow-xl flex items-center justify-between transition-all group cursor-pointer border border-white/20"
             >
               <span>Order</span>
               <ChevronRight className="w-4 h-4 stroke-[2.5] text-white group-hover:translate-x-1 transition-transform" />
@@ -118,7 +118,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreProducts, onDiscoverStory, 
               <button
                 type="button"
                 onClick={handleOrder}
-                className="inline-flex items-center pl-6 pr-2.5 py-2.5 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-semibold text-base shadow-xl transition-all duration-200 group cursor-pointer"
+                className="inline-flex items-center pl-6 pr-2.5 py-2.5 rounded-full bg-black hover:bg-neutral-900 text-white font-semibold text-base shadow-xl transition-all duration-200 group cursor-pointer border border-white/20"
               >
                 <span className="mr-3">Order</span>
                 <span className="w-8 h-8 rounded-full bg-white/20 text-white flex items-center justify-center group-hover:translate-x-1 transition-transform">

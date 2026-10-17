@@ -151,10 +151,10 @@ export function App() {
         onQuickView={(p) => handleOrder(p)}
       />
 
-      {/* Floating Direct Order Button (bottom-right) */}
+      {/* Floating Direct Order Button (bottom-right) - Sleek Black Theme */}
       <button
         onClick={() => handleOrder('Aroosa Baby Wipes (72 Pcs Pack)')}
-        className="fixed bottom-6 right-6 z-40 bg-[#25D366] hover:bg-[#20bd5a] text-white rounded-full px-5 py-3.5 shadow-2xl flex items-center gap-2.5 transition-all hover:scale-105 active:scale-95 group cursor-pointer border border-white/20"
+        className="fixed bottom-6 right-6 z-40 bg-black hover:bg-neutral-900 text-white rounded-full px-5 py-3.5 shadow-2xl flex items-center gap-2.5 transition-all hover:scale-105 active:scale-95 group cursor-pointer border border-white/20"
         aria-label="Order"
         title="Order"
       >

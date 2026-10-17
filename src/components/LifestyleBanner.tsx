@@ -14,6 +14,12 @@ export const LifestyleBanner: React.FC = () => {
       {/* Soft Ambient Cinematic Overlays */}
       <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-slate-950/20 z-10 pointer-events-none" />
 
+      {/* Top Blend: Smooth dissolution into white OurStory section above */}
+      <div className="absolute inset-x-0 top-0 h-28 sm:h-36 lg:h-44 bg-gradient-to-b from-white via-white/60 to-transparent pointer-events-none z-15" />
+
+      {/* Bottom Blend: Seamless dissolution directly into black Footer below */}
+      <div className="absolute inset-x-0 bottom-0 h-32 sm:h-44 lg:h-56 bg-gradient-to-t from-black via-black/75 to-transparent pointer-events-none z-15" />
+
       {/* Floating Animated Bubbles */}
       <div className="absolute inset-0 pointer-events-none z-10 overflow-hidden">
         <div className="bubble w-10 h-10 left-[15%] bottom-0 animate-float" style={{ animationDelay: '1s' }} />

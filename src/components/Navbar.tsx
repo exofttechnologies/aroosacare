@@ -124,14 +124,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch, onOrderNow }) => {
                 <Search className="w-4 h-4 sm:w-5 sm:h-5" />
               </button>
 
-              {/* Order Pill Button (Clean 'Order' label) */}
+              {/* Order Pill Button (Clean 'Order' label) - Sleek Black */}
               <button
                 type="button"
                 onClick={handleOrder}
-                className="inline-flex items-center pl-4 sm:pl-5 pr-2 py-1.5 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-semibold text-xs sm:text-sm shadow-md transition-all duration-200 group cursor-pointer hover:scale-105 active:scale-95 shrink-0"
+                className="inline-flex items-center pl-4 sm:pl-5 pr-2 py-1.5 rounded-full bg-black hover:bg-neutral-900 text-white font-semibold text-xs sm:text-sm shadow-md transition-all duration-200 group cursor-pointer hover:scale-105 active:scale-95 shrink-0 border border-white/20"
               >
                 <span className="mr-2">Order</span>
-                <span className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white/25 text-white flex items-center justify-center group-hover:scale-105 transition-transform">
+                <span className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white/20 text-white flex items-center justify-center group-hover:scale-105 transition-transform">
                   <MessageCircle className="w-3.5 h-3.5 fill-white stroke-none" />
                 </span>
               </button>
@@ -212,16 +212,16 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch, onOrderNow }) => {
                 );
               })}
 
-              {/* Order Quick Button in Mobile Menu */}
+              {/* Order Quick Button in Mobile Menu - Sleek Black */}
               <button
                 type="button"
                 onClick={() => {
                   setMenuOpen(false);
                   handleOrder();
                 }}
-                className="relative text-xs sm:text-[13px] font-bold tracking-[0.14em] text-emerald-700 uppercase py-1 flex items-center gap-1.5 hover:text-emerald-800 transition-colors cursor-pointer"
+                className="relative text-xs sm:text-[13px] font-bold tracking-[0.14em] text-slate-900 uppercase py-1 flex items-center gap-1.5 hover:text-black transition-colors cursor-pointer"
               >
-                <MessageCircle className="w-3.5 h-3.5 fill-emerald-600 stroke-none" />
+                <MessageCircle className="w-3.5 h-3.5 fill-slate-900 stroke-none" />
                 <span>ORDER</span>
               </button>
             </div>
