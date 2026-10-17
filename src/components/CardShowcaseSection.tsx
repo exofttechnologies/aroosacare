@@ -142,7 +142,7 @@ export const CardShowcaseSection: React.FC = () => {
 
         {/* 3D Perspective Card Showcase with Side Cards peeking (NO scroll buttons, auto-scrolls, stops on tap, swipeable) */}
         <div
-          className="relative w-full max-w-sm sm:max-w-md lg:max-w-[450px] mx-auto cursor-grab active:cursor-grabbing"
+          className="relative w-full max-w-[260px] xs:max-w-[290px] sm:max-w-md lg:max-w-[450px] mx-auto cursor-grab active:cursor-grabbing"
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
           onMouseDown={handleMouseDown}
@@ -151,7 +151,7 @@ export const CardShowcaseSection: React.FC = () => {
         >
           {/* Card Viewport */}
           <div
-            className="relative h-[490px] sm:h-[550px] md:h-[580px] w-full flex items-center justify-center"
+            className="relative h-[340px] xs:h-[390px] sm:h-[550px] md:h-[580px] w-full flex items-center justify-center"
             onClick={handleToggleStop}
             title={isStopped ? "Tap to resume auto-scroll" : "Tap to pause auto-scroll"}
           >
@@ -187,7 +187,7 @@ export const CardShowcaseSection: React.FC = () => {
                       : 'translateX(42%) scale(0.85) rotateY(-12deg)',
                     zIndex: isActive ? 20 : 10,
                   }}
-                  className={`absolute top-0 w-full h-full transition-all duration-500 ease-out cursor-pointer rounded-[30px] sm:rounded-[34px] overflow-hidden ${
+                  className={`absolute top-0 w-full h-full transition-all duration-500 ease-out cursor-pointer rounded-[22px] sm:rounded-[34px] overflow-hidden ${
                     isActive
                       ? 'shadow-[0_30px_70px_-15px_rgba(10,103,112,0.35),0_10px_30px_rgba(0,0,0,0.12)] border-2 border-white/80'
                       : 'opacity-40 blur-[1.5px] hover:opacity-75 shadow-lg border border-black/5'

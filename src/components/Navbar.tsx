@@ -125,11 +125,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch, onOrderNow }) => {
                 <Search className="w-4 h-4 sm:w-5 sm:h-5" />
               </button>
 
-              {/* Order Pill Button (Clean 'Order' label) - Sleek Black */}
+              {/* Order Pill Button (Clean 'Order' label) - Water Blue */}
               <button
                 type="button"
                 onClick={handleOrder}
-                className="inline-flex items-center pl-4 sm:pl-5 pr-2 py-1.5 rounded-full bg-black hover:bg-neutral-900 text-white font-semibold text-xs sm:text-sm shadow-md transition-all duration-200 group cursor-pointer hover:scale-105 active:scale-95 shrink-0 border border-white/20"
+                className="inline-flex items-center pl-4 sm:pl-5 pr-2 py-1.5 rounded-full bg-[#00B4D8] hover:bg-[#0096C7] text-white font-semibold text-xs sm:text-sm shadow-md transition-all duration-200 group cursor-pointer hover:scale-105 active:scale-95 shrink-0 border border-white/20"
               >
                 <span className="mr-2">Order</span>
                 <span className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white/20 text-white flex items-center justify-center group-hover:scale-105 transition-transform">
