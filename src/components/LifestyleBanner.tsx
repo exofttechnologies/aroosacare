@@ -2,7 +2,7 @@ import React from 'react';
 
 export const LifestyleBanner: React.FC = () => {
   return (
-    <section className="relative h-[440px] sm:h-[520px] lg:h-[600px] w-full overflow-hidden my-8 sm:my-14 select-none">
+    <section className="relative h-[440px] sm:h-[520px] lg:h-[600px] w-full overflow-hidden my-0 py-0 select-none">
       
       {/* Background Banner Image — Aroosa Baby Wipes in Sunlit Forest */}
       <img
@@ -13,10 +13,6 @@ export const LifestyleBanner: React.FC = () => {
 
       {/* Soft Ambient Cinematic Overlays */}
       <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-slate-950/20 z-10 pointer-events-none" />
-      
-      {/* Top & Bottom blends into surrounding #FAF8F5 page */}
-      <div className="absolute inset-x-0 top-0 h-20 sm:h-28 bg-gradient-to-b from-[#FAF8F5] via-[#FAF8F5]/60 to-transparent pointer-events-none z-15" />
-      <div className="absolute inset-x-0 bottom-0 h-20 sm:h-28 bg-gradient-to-t from-[#FAF8F5] via-[#FAF8F5]/60 to-transparent pointer-events-none z-15" />
 
       {/* Floating Animated Bubbles */}
       <div className="absolute inset-0 pointer-events-none z-10 overflow-hidden">

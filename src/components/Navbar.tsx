@@ -62,9 +62,15 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch, onOrderNow }) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="flex items-center justify-between pointer-events-auto">
             
-            {/* Left: Aroosa Light Blue Transparent Brand Logo */}
-            <div className="flex items-center">
-              <a href="#hero" className="flex items-center group focus:outline-none">
+            {/* Left: Aroosa Light Blue Transparent Brand Logo (Desktop only, hides on scroll) */}
+            <div
+              className={`hidden lg:flex items-center transition-all duration-300 ${
+                isScrolled
+                  ? 'opacity-0 -translate-x-4 pointer-events-none invisible w-0 overflow-hidden'
+                  : 'opacity-100 translate-x-0 w-auto'
+              }`}
+            >
+              <a href="#hero" className="flex items-center group focus:outline-none shrink-0">
                 <img
                   src={`${import.meta.env.BASE_URL}images/Aroosa_logo_light_blue_transparent.png`}
                   alt="Aroosa"
@@ -75,9 +81,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch, onOrderNow }) => {
               </a>
             </div>
 
-            {/* Center: Glass Pill Navigation Capsule (Desktop - ALWAYS visible, top & scrolled!) */}
+            {/* Center: Glass Pill Navigation Capsule (Desktop only - always centered) */}
             <nav
-              className={`hidden lg:inline-flex items-center transition-all duration-300 rounded-full px-2 py-1.5 shadow-sm ${
+              className={`hidden lg:inline-flex items-center lg:absolute lg:left-1/2 lg:-translate-x-1/2 transition-all duration-300 rounded-full px-2 py-1.5 shadow-sm ${
                 isScrolled
                   ? 'bg-white/10 backdrop-blur-md border border-white/15'
                   : 'bg-white/20 backdrop-blur-md border border-white/30'
@@ -101,9 +107,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch, onOrderNow }) => {
               })}
             </nav>
 
-            {/* Right Side: Search + Order Button + Hamburger Toggle (Mobile Only) */}
-            <div className="flex items-center space-x-2 sm:space-x-3">
-              
+            {/* Right: Desktop Search + Order Button (Desktop only, hides on scroll) */}
+            <div
+              className={`hidden lg:flex items-center space-x-2 sm:space-x-3 transition-all duration-300 ${
+                isScrolled
+                  ? 'opacity-0 translate-x-4 pointer-events-none invisible w-0 overflow-hidden'
+                  : 'opacity-100 translate-x-0 w-auto'
+              }`}
+            >
               {/* Search Button */}
               <button
                 onClick={onOpenSearch}
@@ -117,37 +128,36 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch, onOrderNow }) => {
               <button
                 type="button"
                 onClick={handleOrder}
-                className="inline-flex items-center pl-4 sm:pl-5 pr-2 py-1.5 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-semibold text-xs sm:text-sm shadow-md transition-all duration-200 group cursor-pointer hover:scale-105 active:scale-95"
+                className="inline-flex items-center pl-4 sm:pl-5 pr-2 py-1.5 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-semibold text-xs sm:text-sm shadow-md transition-all duration-200 group cursor-pointer hover:scale-105 active:scale-95 shrink-0"
               >
                 <span className="mr-2">Order</span>
                 <span className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white/25 text-white flex items-center justify-center group-hover:scale-105 transition-transform">
                   <MessageCircle className="w-3.5 h-3.5 fill-white stroke-none" />
                 </span>
               </button>
-
-              {/* Hamburger Button: Visible ONLY on mobile, NEVER on desktop */}
-              <button
-                id="hamburger-btn"
-                type="button"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setMenuOpen((prev) => !prev);
-                }}
-                aria-label={menuOpen ? "Close Menu" : "Open Menu"}
-                className="lg:hidden w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white/20 hover:bg-white/30 text-white border border-white/30 active:scale-95 backdrop-blur-md flex flex-col items-center justify-center gap-[4.5px] transition-all focus:outline-none shadow-sm cursor-pointer relative z-50"
-              >
-                <span className={`w-[18px] h-[2px] bg-white rounded-full transition-all duration-300 block pointer-events-none ${
-                  menuOpen ? 'rotate-45 translate-y-[6.5px]' : ''
-                }`} />
-                <span className={`w-[18px] h-[2px] bg-white rounded-full transition-all duration-300 block pointer-events-none ${
-                  menuOpen ? 'opacity-0 scale-x-0' : ''
-                }`} />
-                <span className={`w-[18px] h-[2px] bg-white rounded-full transition-all duration-300 block pointer-events-none ${
-                  menuOpen ? '-rotate-45 -translate-y-[6.5px]' : ''
-                }`} />
-              </button>
-
             </div>
+
+            {/* Mobile Only: Hamburger Toggle (Visible ONLY on mobile, NEVER on desktop) */}
+            <button
+              id="hamburger-btn"
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                setMenuOpen((prev) => !prev);
+              }}
+              aria-label={menuOpen ? "Close Menu" : "Open Menu"}
+              className="lg:hidden ml-auto w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white/20 hover:bg-white/30 text-white border border-white/30 active:scale-95 backdrop-blur-md flex flex-col items-center justify-center gap-[4.5px] transition-all focus:outline-none shadow-sm cursor-pointer relative z-50"
+            >
+              <span className={`w-[18px] h-[2px] bg-white rounded-full transition-all duration-300 block pointer-events-none ${
+                menuOpen ? 'rotate-45 translate-y-[6.5px]' : ''
+              }`} />
+              <span className={`w-[18px] h-[2px] bg-white rounded-full transition-all duration-300 block pointer-events-none ${
+                menuOpen ? 'opacity-0 scale-x-0' : ''
+              }`} />
+              <span className={`w-[18px] h-[2px] bg-white rounded-full transition-all duration-300 block pointer-events-none ${
+                menuOpen ? '-rotate-45 -translate-y-[6.5px]' : ''
+              }`} />
+            </button>
 
           </div>
         </div>
