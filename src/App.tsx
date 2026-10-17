@@ -6,7 +6,6 @@ import { CardShowcaseSection } from './components/CardShowcaseSection';
 import { ProductDetailsShowcase } from './components/ProductDetailsShowcase';
 import { ProductFeatures } from './components/ProductFeatures';
 import { OurStory } from './components/OurStory';
-import { LifestyleBanner } from './components/LifestyleBanner';
 import { Footer } from './components/Footer';
 import { SearchModal } from './components/SearchModal';
 import { Toast } from './components/Toast';
@@ -137,9 +136,6 @@ export function App() {
 
       {/* Our Story Section */}
       <OurStory />
-
-      {/* Baby Lifestyle Visual Section */}
-      <LifestyleBanner />
 
       {/* Footer */}
       <Footer />
