@@ -46,18 +46,9 @@ export const Hero: React.FC<HeroProps> = ({ onExploreProducts, onDiscoverStory, 
       {/* Hero Content Container */}
       <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 w-full">
         
-        {/* MOBILE VIEW (Logo, Headline, Subtitle, 2 stacked pill buttons) */}
+        {/* MOBILE VIEW (Headline, Subtitle, 2 stacked pill buttons) */}
         <div className="lg:hidden flex flex-col justify-end space-y-3.5 max-w-md mx-auto text-left">
           
-          {/* Brand Logo on Hero */}
-          <div className="inline-block mb-1">
-            <img
-              src={`${import.meta.env.BASE_URL}images/Aroosa_logo_light_blue_transparent.png`}
-              alt="Aroosa"
-              className="h-8 sm:h-9 w-auto object-contain drop-shadow-md select-none"
-            />
-          </div>
-
           {/* Main Headline: Pure · Soft · Gentle */}
           <h1 className="text-3xl sm:text-4xl font-serif font-normal text-white tracking-tight leading-[1.15] drop-shadow-sm">
             Pure · Soft · Gentle

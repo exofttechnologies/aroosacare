@@ -216,7 +216,7 @@ export const ProductDetailsShowcase: React.FC<ProductDetailsShowcaseProps> = ({ 
           <button
             type="button"
             onClick={handleDetailsClick}
-            className="inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-[#00B4D8] hover:bg-[#0096C7] text-white font-semibold text-xs sm:text-sm shadow-xl transition-all active:scale-95 group cursor-pointer border border-white/20"
+            className="inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-black hover:bg-neutral-800 text-white font-semibold text-xs sm:text-sm shadow-xl transition-all active:scale-95 group cursor-pointer border border-white/20"
           >
             <MessageCircle className="w-4 h-4 fill-white stroke-none" />
             <span>Order</span>

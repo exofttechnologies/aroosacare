@@ -31,7 +31,7 @@ export function App() {
     <div className="min-h-screen bg-[#FAF8F5] text-slate-900 flex flex-col font-sans selection:bg-teal-100 selection:text-teal-900">
 
       {/* Elegant Brand Preloader */}
-      <Preloader minDuration={1800} />
+      <Preloader minDuration={1200} />
 
       {/* Navbar with Direct WhatsApp Order Trigger */}
       <Navbar
@@ -147,10 +147,10 @@ export function App() {
         onQuickView={(p) => handleOrder(p)}
       />
 
-      {/* Floating Direct Order Button (bottom-right) - Water Blue Theme */}
+      {/* Floating Direct Order Button (bottom-right) - Sleek Black */}
       <button
         onClick={() => handleOrder('Aroosa Baby Wipes (72 Pcs Pack)')}
-        className="fixed bottom-6 right-6 z-40 bg-[#00B4D8] hover:bg-[#0096C7] text-white rounded-full px-5 py-3.5 shadow-2xl flex items-center gap-2.5 transition-all hover:scale-105 active:scale-95 group cursor-pointer border border-white/20"
+        className="fixed bottom-6 right-6 z-40 bg-black hover:bg-neutral-800 text-white rounded-full px-5 py-3.5 shadow-2xl flex items-center gap-2.5 transition-all hover:scale-105 active:scale-95 group cursor-pointer border border-white/20"
         aria-label="Order"
         title="Order"
       >

@@ -63,9 +63,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch, onOrderNow }) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative pointer-events-none">
           <div className="flex items-center justify-between pointer-events-none">
             
-            {/* Left: Aroosa Light Blue Transparent Brand Logo (Desktop only, hides on scroll) */}
+            {/* Left: Aroosa Light Blue Transparent Brand Logo */}
             <div
-              className={`hidden lg:flex items-center transition-all duration-300 ${
+              className={`flex items-center transition-all duration-300 ${
                 isScrolled
                   ? 'opacity-0 -translate-x-4 pointer-events-none invisible w-0 overflow-hidden'
                   : 'opacity-100 translate-x-0 w-auto pointer-events-auto'
@@ -76,7 +76,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch, onOrderNow }) => {
                   src={`${import.meta.env.BASE_URL}images/Aroosa_logo_light_blue_transparent.png`}
                   alt="Aroosa"
                   className={`w-auto object-contain drop-shadow-md select-none transition-all duration-200 hover:scale-105 ${
-                    isScrolled ? 'h-7 sm:h-8' : 'h-8 sm:h-10 md:h-11'
+                    isScrolled ? 'h-6 sm:h-7' : 'h-7 sm:h-8 md:h-10 lg:h-11'
                   }`}
                 />
               </a>
@@ -125,11 +125,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch, onOrderNow }) => {
                 <Search className="w-4 h-4 sm:w-5 sm:h-5" />
               </button>
 
-              {/* Order Pill Button (Clean 'Order' label) - Water Blue */}
+              {/* Order Pill Button (Clean 'Order' label) - Black */}
               <button
                 type="button"
                 onClick={handleOrder}
-                className="inline-flex items-center pl-4 sm:pl-5 pr-2 py-1.5 rounded-full bg-[#00B4D8] hover:bg-[#0096C7] text-white font-semibold text-xs sm:text-sm shadow-md transition-all duration-200 group cursor-pointer hover:scale-105 active:scale-95 shrink-0 border border-white/20"
+                className="inline-flex items-center pl-4 sm:pl-5 pr-2 py-1.5 rounded-full bg-black hover:bg-neutral-800 text-white font-semibold text-xs sm:text-sm shadow-md transition-all duration-200 group cursor-pointer hover:scale-105 active:scale-95 shrink-0 border border-white/20"
               >
                 <span className="mr-2">Order</span>
                 <span className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white/20 text-white flex items-center justify-center group-hover:scale-105 transition-transform">
