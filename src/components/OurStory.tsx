@@ -50,9 +50,9 @@ export const OurStory: React.FC<OurStoryProps> = () => {
           <div className="lg:col-span-6 space-y-6 text-left">
             
             <div>
-              <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-slate-100 text-slate-800 text-[11px] font-semibold uppercase tracking-wider">
-                <span>OUR BRAND JOURNEY</span>
-              </div>
+              <p className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.25em] text-teal-800 mb-2">
+                OUR BRAND JOURNEY
+              </p>
             </div>
 
             <div>

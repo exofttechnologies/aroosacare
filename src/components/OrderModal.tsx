@@ -49,7 +49,7 @@ export const OrderModal: React.FC<OrderModalProps> = ({
                 <Package className="w-6 h-6" />
               </div>
               <div>
-                <span className="text-[10px] font-bold text-[#006059] uppercase tracking-wider bg-teal-50 px-2.5 py-0.5 rounded-full border border-teal-100">
+                <span className="text-[10px] font-bold text-[#006059] uppercase tracking-[0.2em] block">
                   DIRECT ORDER & INQUIRY
                 </span>
                 <h3 className="text-xl font-bold font-display text-slate-900 mt-1">

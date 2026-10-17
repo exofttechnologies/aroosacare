@@ -175,15 +175,15 @@ export const ProductShowcase: React.FC<ProductShowcaseProps> = ({ onOrderNow }) 
 
       </div>
 
-      {/* PRODUCT IMAGE — floating on clouds, flush to bottom */}
-      <div className="relative z-10 mt-4 sm:mt-6 w-full flex justify-center items-end">
+      {/* PRODUCT IMAGE — new Aroosa baby wipes pack, flush to bottom */}
+      <div className="relative z-10 mt-6 sm:mt-10 w-full flex justify-center items-end">
         <img
-          src={`${import.meta.env.BASE_URL}images/about_product_part.png`}
-          alt="Aroosa Wet Wipes 72-pack floating on soft clouds"
-          className="w-full max-w-2xl lg:max-w-3xl xl:max-w-4xl h-auto object-contain select-none"
+          src={`${import.meta.env.BASE_URL}images/Aroosa Baby Wipes Pack Mockup.png`}
+          alt="Aroosa Baby Wipes 72-pack"
+          className="w-full max-w-xl sm:max-w-2xl lg:max-w-3xl h-auto object-contain select-none"
           style={{
-            marginBottom: '-2px',
-            filter: 'drop-shadow(0 20px 60px rgba(0,50,100,0.35))',
+            marginBottom: '-12px',
+            filter: 'drop-shadow(0 25px 60px rgba(0,35,70,0.30))',
           }}
         />
       </div>

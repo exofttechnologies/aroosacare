@@ -12,36 +12,36 @@ interface CardItem {
 
 const CARDS: CardItem[] = [
   {
-    id: 'pure-care-teal',
+    id: 'pure-care-dark-forest',
     title: 'Pure Care for Little Ones',
     subtitle: "Aroosa wet wipes are made with 99% pure water, chamomile, vitamin E and aloe — keeping your baby's skin clean, soft and protected.",
     badgeTag: 'SIGNATURE FORMULA',
-    imageSrc: `${import.meta.env.BASE_URL}images/aroosa_card_exact_1.jpg`,
-    bgColor: 'bg-[#1A8992]',
+    imageSrc: `${import.meta.env.BASE_URL}images/aroosa_card_showcase_1.jpg`,
+    bgColor: 'bg-[#183d2a]',
   },
   {
-    id: 'product-pack-nursery',
+    id: 'product-pack-pure',
     title: 'Aroosa Wet Wipes 72-Pack',
     subtitle: '72 soft & thick wipes with double moisture-lock lid. Perfect for daily diaper changes, delicate faces, and sticky hands.',
     badgeTag: '72 WIPES PACK',
-    imageSrc: `${import.meta.env.BASE_URL}images/product cardimg1.png`,
-    bgColor: 'bg-[#82C3E7]',
+    imageSrc: `${import.meta.env.BASE_URL}images/aroosa_card_showcase_2.jpg`,
+    bgColor: 'bg-[#F2F7F4]',
   },
   {
-    id: 'plant-based-fabric',
+    id: 'plant-based-fabric-studio',
     title: '100% Natural Plant-Based Fabric',
     subtitle: 'Made entirely from naturally sourced, plant-derived fibers without synthetic materials. Kind to sensitive baby skin and compostable.',
     badgeTag: 'PLANT-BASED FIBERS',
-    imageSrc: `${import.meta.env.BASE_URL}images/productcard2_card.jpg`,
-    bgColor: 'bg-[#E6CCB3]',
+    imageSrc: `${import.meta.env.BASE_URL}images/aroosa_card_showcase_3.jpg`,
+    bgColor: 'bg-[#EFECE6]',
   },
   {
-    id: 'water-tested-purity',
+    id: 'water-tested-purity-mint',
     title: '99% Pure Water · EWG Verified',
     subtitle: 'Dermatologist tested hypoallergenic wipes with 99% pure water formulation for newborn and sensitive baby skin.',
     badgeTag: 'CLINICALLY TESTED',
-    imageSrc: `${import.meta.env.BASE_URL}images/product3_card.jpg`,
-    bgColor: 'bg-[#E2E2E2]',
+    imageSrc: `${import.meta.env.BASE_URL}images/aroosa_card_showcase_4.jpg`,
+    bgColor: 'bg-[#E3F4F1]',
   },
 ];
 
@@ -233,7 +233,7 @@ export const CardShowcaseSection: React.FC = () => {
 
           {/* Active Card Details Caption below Carousel */}
           <div className="mt-4 text-center px-4 max-w-sm mx-auto">
-            <span className="inline-block text-[10px] font-bold tracking-widest text-teal-800 uppercase bg-teal-50 px-3 py-1 rounded-full border border-teal-200 mb-2">
+            <span className="inline-block text-[11px] font-bold tracking-[0.25em] text-teal-800 uppercase mb-2">
               {activeCard.badgeTag}
             </span>
             <h3 className="text-lg font-bold text-slate-900 font-serif leading-tight">

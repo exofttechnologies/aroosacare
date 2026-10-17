@@ -3,13 +3,15 @@ import { Preloader } from './components/Preloader';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { CardShowcaseSection } from './components/CardShowcaseSection';
-import { ProductShowcase } from './components/ProductShowcase';
+import { ProductDetailsShowcase } from './components/ProductDetailsShowcase';
 import { ProductFeatures } from './components/ProductFeatures';
 import { OurStory } from './components/OurStory';
 import { LifestyleBanner } from './components/LifestyleBanner';
 import { Footer } from './components/Footer';
 import { SearchModal } from './components/SearchModal';
 import { Toast } from './components/Toast';
+import { MessageCircle } from 'lucide-react';
+import { openWhatsAppOrder } from './utils/whatsapp';
 
 export function App() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -20,31 +22,41 @@ export function App() {
     setTimeout(() => setToastMessage(null), 4000);
   };
 
+  const handleOrder = (product?: any) => {
+    const name = typeof product === 'string' ? product : product?.name;
+    openWhatsAppOrder(name);
+    showToast('Opening WhatsApp to place your order...');
+  };
+
   return (
     <div className="min-h-screen bg-[#FAF8F5] text-slate-900 flex flex-col font-sans selection:bg-teal-100 selection:text-teal-900">
 
       {/* Elegant Brand Preloader */}
       <Preloader minDuration={1800} />
 
-      {/* Navbar */}
-      <Navbar onOpenSearch={() => setIsSearchOpen(true)} />
+      {/* Navbar with Direct WhatsApp Order Trigger */}
+      <Navbar
+        onOpenSearch={() => setIsSearchOpen(true)}
+        onOrderNow={() => handleOrder('Aroosa Baby Wipes')}
+      />
 
-      {/* Hero Section */}
+      {/* Hero Section — Desktop uses aroosa_dreamy_ad.png, mobile uses mint studio */}
       <Hero
         onExploreProducts={() => {
-          const el = document.getElementById('products');
+          const el = document.getElementById('product-details');
           if (el) el.scrollIntoView({ behavior: 'smooth' });
         }}
         onDiscoverStory={() => {
           const el = document.getElementById('story');
           if (el) el.scrollIntoView({ behavior: 'smooth' });
         }}
+        onOrderNow={() => handleOrder('Aroosa Baby Wipes (72 Pcs Pack)')}
       />
 
-      {/* Dedicated Card Showcase Section — Exact Given Card Style & Multiple Cards Carousel */}
+      {/* Dedicated Card Showcase Section — 3D Auto-scroll carousel */}
       <CardShowcaseSection />
 
-      {/* Plain Text Product Intro — full bleed, no cards, clean editorial typography */}
+      {/* Plain Text Product Intro — clean editorial typography */}
       <section className="bg-[#FAF8F5] px-5 sm:px-8 lg:px-0 py-16 sm:py-20 lg:py-28">
         <div className="lg:px-12 xl:px-20 max-w-none">
 
@@ -117,8 +129,8 @@ export function App() {
         </div>
       </section>
 
-      {/* Product Showcase Section */}
-      <ProductShowcase />
+      {/* Exact Product Details Design Showcase — card-free, directly connects to WhatsApp order */}
+      <ProductDetailsShowcase onOrderNow={handleOrder} />
 
       {/* Product Features Section */}
       <ProductFeatures />
@@ -132,13 +144,27 @@ export function App() {
       {/* Footer */}
       <Footer />
 
-      {/* Search Modal */}
+      {/* Search Modal with Direct WhatsApp Order */}
       <SearchModal
         isOpen={isSearchOpen}
         onClose={() => setIsSearchOpen(false)}
-        onQuickView={() => {}}
+        onQuickView={(p) => handleOrder(p)}
       />
 
+      {/* Floating Direct Order Button (bottom-right) */}
+      <button
+        onClick={() => handleOrder('Aroosa Baby Wipes (72 Pcs Pack)')}
+        className="fixed bottom-6 right-6 z-40 bg-[#25D366] hover:bg-[#20bd5a] text-white rounded-full px-5 py-3.5 shadow-2xl flex items-center gap-2.5 transition-all hover:scale-105 active:scale-95 group cursor-pointer border border-white/20"
+        aria-label="Order"
+        title="Order"
+      >
+        <MessageCircle className="w-5 h-5 fill-white stroke-none" />
+        <span className="font-semibold text-xs sm:text-sm tracking-wide">
+          Order
+        </span>
+      </button>
+
+      {/* Feedback Toast */}
       <Toast message={toastMessage} onClose={() => setToastMessage(null)} />
     </div>
   );

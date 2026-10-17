@@ -2,21 +2,21 @@ import React from 'react';
 
 export const LifestyleBanner: React.FC = () => {
   return (
-    <section className="relative h-[480px] sm:h-[540px] w-full overflow-hidden my-12 select-none">
+    <section className="relative h-[440px] sm:h-[520px] lg:h-[600px] w-full overflow-hidden my-8 sm:my-14 select-none">
       
-      {/* Background Banner Image — Hand pulling soft wipe in cozy nursery */}
+      {/* Background Banner Image — Aroosa Baby Wipes in Sunlit Forest */}
       <img
-        src={`${import.meta.env.BASE_URL}images/wipes_hand_pull.jpg`}
-        alt="Aroosa gentle baby wipes in cozy nursery"
-        className="w-full h-full object-cover object-center scale-105 transition-transform duration-1000"
+        src={`${import.meta.env.BASE_URL}images/aroosa_sunlit_forest.png`}
+        alt="Aroosa gentle baby wipes in a pristine sunlit forest with clear spring water"
+        className="w-full h-full object-cover object-center scale-100 sm:scale-105 transition-transform duration-1000"
       />
 
-      {/* Soft Cinematic Overlays */}
-      <div className="absolute inset-0 bg-gradient-to-r from-slate-950/60 via-slate-900/30 to-transparent z-10" />
+      {/* Soft Ambient Cinematic Overlays */}
+      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-slate-950/20 z-10 pointer-events-none" />
       
       {/* Top & Bottom blends into surrounding #FAF8F5 page */}
-      <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#FAF8F5] via-[#FAF8F5]/60 to-transparent pointer-events-none z-15" />
-      <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#FAF8F5] via-[#FAF8F5]/60 to-transparent pointer-events-none z-15" />
+      <div className="absolute inset-x-0 top-0 h-20 sm:h-28 bg-gradient-to-b from-[#FAF8F5] via-[#FAF8F5]/60 to-transparent pointer-events-none z-15" />
+      <div className="absolute inset-x-0 bottom-0 h-20 sm:h-28 bg-gradient-to-t from-[#FAF8F5] via-[#FAF8F5]/60 to-transparent pointer-events-none z-15" />
 
       {/* Floating Animated Bubbles */}
       <div className="absolute inset-0 pointer-events-none z-10 overflow-hidden">
@@ -25,20 +25,17 @@ export const LifestyleBanner: React.FC = () => {
         <div className="bubble w-8 h-8 left-[75%] bottom-0 animate-float" style={{ animationDelay: '0s' }} />
       </div>
 
-      {/* Centered Overlay Content */}
-      <div className="relative z-20 h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center">
-        <div className="max-w-xl bg-white/85 backdrop-blur-md p-8 sm:p-12 rounded-3xl border border-white/90 shadow-2xl text-left space-y-4">
-          <div className="inline-flex items-center px-3.5 py-1.5 rounded-full bg-teal-100/90 text-teal-800 text-xs font-semibold uppercase tracking-wider">
-            <span>PURE COMFORT</span>
-          </div>
-
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-serif text-slate-900 tracking-tight leading-tight">
-            Little moments.{' '}
-            <span className="text-teal-700 block font-sans font-light">Gentle care.</span>
-          </h2>
-
-          <p className="text-sm sm:text-base text-slate-600 font-normal leading-relaxed">
-            Every smile, giggly clean-up, and bedtime wipe is a gentle memory in the making. Formulated with pure love for your baby.
+      {/* Subtle Caption Pill at bottom left */}
+      <div className="relative z-20 h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-end pb-8 sm:pb-12">
+        <div className="bg-white/85 backdrop-blur-md px-6 py-4 rounded-2xl border border-white/90 shadow-xl max-w-md text-left">
+          <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-teal-900 mb-1">
+            NATURE INSPIRED · PURE CARE
+          </p>
+          <h3 className="text-lg sm:text-xl font-serif text-slate-900 font-bold leading-tight">
+            Pure as Spring Water. Soft as Morning Dew.
+          </h3>
+          <p className="text-xs text-slate-600 font-normal mt-1">
+            Engineered with 99.9% reverse-osmosis purified water and plant-based cotton fibers for the gentlest newborn touch.
           </p>
         </div>
       </div>

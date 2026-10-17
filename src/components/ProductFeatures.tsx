@@ -41,18 +41,16 @@ export const ProductFeatures: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading */}
-        <div>
-          <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-            <span className="text-xs font-semibold uppercase tracking-wider text-sky-700 bg-white border border-sky-200/80 px-4 py-1.5 rounded-full shadow-xs">
-              THOUGHTFUL DETAILS
-            </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display text-slate-900 tracking-tight">
-              Gentle by Nature. Thoughtful by Design.
-            </h2>
-            <p className="text-sm sm:text-base text-slate-600 font-normal">
-              Every feature is crafted to make your daily routine softer, simpler, and more reassuring.
-            </p>
-          </div>
+        <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
+          <p className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.25em] text-teal-800 mb-3">
+            THOUGHTFUL DETAILS
+          </p>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display text-slate-900 tracking-tight">
+            Gentle by Nature. Thoughtful by Design.
+          </h2>
+          <p className="text-sm sm:text-base text-slate-600 font-normal">
+            Every feature is crafted to make your daily routine softer, simpler, and more reassuring.
+          </p>
         </div>
 
         {/* Feature Cards Grid with Staggered Scroll Animations */}

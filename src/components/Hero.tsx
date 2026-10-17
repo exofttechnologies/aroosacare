@@ -1,23 +1,33 @@
 import React from 'react';
 import { ArrowRight, ChevronRight, Sparkles } from 'lucide-react';
+import { openWhatsAppOrder } from '../utils/whatsapp';
 
 interface HeroProps {
   onExploreProducts?: () => void;
   onDiscoverStory?: () => void;
+  onOrderNow?: () => void;
 }
 
-export const Hero: React.FC<HeroProps> = ({ onExploreProducts, onDiscoverStory }) => {
+export const Hero: React.FC<HeroProps> = ({ onExploreProducts, onDiscoverStory, onOrderNow }) => {
+  const handleOrder = () => {
+    if (onOrderNow) {
+      onOrderNow();
+    } else {
+      openWhatsAppOrder();
+    }
+  };
+
   return (
     <section id="hero" className="relative min-h-[100dvh] lg:min-h-screen flex flex-col justify-end lg:justify-center lg:items-center pt-24 sm:pt-32 pb-8 sm:pb-12 lg:pb-24 overflow-hidden">
       
-      {/* Background Hero Image (aroosa_mobile_hero.png on mobile and aroosa_hero_bg.png on desktop) */}
+      {/* Background Hero Image (aroosa_mobile_mint_studio.png on mobile and aroosa_dreamy_ad.png on desktop) */}
       <div className="absolute inset-0 z-0">
         <picture className="w-full h-full block">
-          <source media="(max-width: 768px)" srcSet={`${import.meta.env.BASE_URL}images/aroosa_mobile_hero.png`} />
+          <source media="(max-width: 768px)" srcSet={`${import.meta.env.BASE_URL}images/aroosa_mobile_mint_studio.png`} />
           <img
-            src={`${import.meta.env.BASE_URL}images/aroosa_hero_bg.png`}
-            alt="Aroosa Wet Wipes"
-            className="w-full h-full object-cover object-top sm:object-center select-none"
+            src={`${import.meta.env.BASE_URL}images/aroosa_dreamy_ad.png`}
+            alt="Aroosa Wet Wipes Dreamy Advertisement"
+            className="w-full h-full object-cover object-center select-none"
           />
         </picture>
         
@@ -25,8 +35,8 @@ export const Hero: React.FC<HeroProps> = ({ onExploreProducts, onDiscoverStory }
         <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-slate-950/70 via-slate-950/25 to-transparent lg:hidden pointer-events-none" />
         <div className="absolute inset-x-0 bottom-8 h-3/5 bg-gradient-to-t from-slate-950/85 via-slate-950/50 to-transparent lg:hidden pointer-events-none" />
 
-        {/* Desktop Gradients */}
-        <div className="hidden lg:block absolute inset-0 bg-gradient-to-r from-sky-950/50 via-sky-900/25 to-transparent pointer-events-none max-w-2xl" />
+        {/* Desktop Gradients: Subtle dark mist on the left for maximum text contrast against dreamy image */}
+        <div className="hidden lg:block absolute inset-0 bg-gradient-to-r from-slate-950/65 via-slate-950/35 to-transparent pointer-events-none max-w-3xl" />
 
         {/* Bottom Blend Gradient (Mobile & Desktop): Smoothly melts into #FAF8F5 with a soft ambient drop shadow */}
         <div className="absolute inset-x-0 bottom-0 h-28 sm:h-36 lg:h-40 bg-gradient-to-t from-[#FAF8F5] via-[#FAF8F5]/85 to-transparent pointer-events-none z-10" />
@@ -60,23 +70,23 @@ export const Hero: React.FC<HeroProps> = ({ onExploreProducts, onDiscoverStory }
 
           {/* Two stacked pill action buttons */}
           <div className="pt-2 space-y-3 w-full">
-            {/* Primary Action Button */}
-            <a
-              href="#products"
-              onClick={onExploreProducts}
-              className="w-full py-4 px-6 rounded-full bg-[#E3F942] hover:bg-[#d6ec34] active:scale-[0.98] text-slate-950 font-bold text-sm sm:text-base shadow-xl flex items-center justify-between transition-all group"
+            {/* Primary Action Button: Direct Order */}
+            <button
+              type="button"
+              onClick={handleOrder}
+              className="w-full py-4 px-6 rounded-full bg-[#25D366] hover:bg-[#20bd5a] active:scale-[0.98] text-white font-bold text-sm sm:text-base shadow-xl flex items-center justify-between transition-all group cursor-pointer"
             >
-              <span>Explore Products</span>
-              <ChevronRight className="w-4 h-4 stroke-[2.5] text-slate-950 group-hover:translate-x-1 transition-transform" />
-            </a>
+              <span>Order</span>
+              <ChevronRight className="w-4 h-4 stroke-[2.5] text-white group-hover:translate-x-1 transition-transform" />
+            </button>
 
             {/* Secondary Action Button */}
             <a
-              href="#story"
-              onClick={onDiscoverStory}
-              className="w-full py-4 px-6 rounded-full bg-[#273240]/85 hover:bg-[#273240]/95 active:scale-[0.98] backdrop-blur-md border border-white/15 text-white font-medium text-sm sm:text-base shadow-lg flex items-center justify-between transition-all group"
+              href="#product-details"
+              onClick={onExploreProducts}
+              className="w-full py-3.5 px-6 rounded-full bg-[#273240]/85 hover:bg-[#273240]/95 active:scale-[0.98] backdrop-blur-md border border-white/15 text-white font-medium text-sm sm:text-base shadow-lg flex items-center justify-between transition-all group"
             >
-              <span>Discover Our Story</span>
+              <span>View Product Anatomy</span>
               <ChevronRight className="w-4 h-4 stroke-[2] text-white/80 group-hover:translate-x-1 transition-transform" />
             </a>
           </div>
@@ -105,23 +115,23 @@ export const Hero: React.FC<HeroProps> = ({ onExploreProducts, onDiscoverStory }
             </p>
 
             <div className="pt-2 flex items-center gap-4">
-              <a
-                href="#products"
-                onClick={onExploreProducts}
-                className="inline-flex items-center pl-6 pr-2.5 py-2.5 rounded-full bg-white hover:bg-slate-100 text-slate-900 font-semibold text-base shadow-xl transition-all duration-200 group"
+              <button
+                type="button"
+                onClick={handleOrder}
+                className="inline-flex items-center pl-6 pr-2.5 py-2.5 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-semibold text-base shadow-xl transition-all duration-200 group cursor-pointer"
               >
-                <span className="mr-3">Explore Products</span>
-                <span className="w-8 h-8 rounded-full bg-[#002D3D] text-white flex items-center justify-center group-hover:translate-x-1 transition-transform">
+                <span className="mr-3">Order</span>
+                <span className="w-8 h-8 rounded-full bg-white/20 text-white flex items-center justify-center group-hover:translate-x-1 transition-transform">
                   <ArrowRight className="w-4 h-4 stroke-[2.5]" />
                 </span>
-              </a>
+              </button>
 
               <a
-                href="#story"
-                onClick={onDiscoverStory}
-                className="inline-flex items-center px-6 py-2.5 rounded-full bg-white/15 hover:bg-white/25 active:scale-95 text-white font-medium text-base backdrop-blur-md border border-white/25 shadow-lg transition-all duration-200"
+                href="#product-details"
+                onClick={onExploreProducts}
+                className="inline-flex items-center px-6 py-2.5 rounded-full bg-white/20 hover:bg-white/30 active:scale-95 text-white font-medium text-base backdrop-blur-md border border-white/30 shadow-lg transition-all duration-200"
               >
-                <span>Our Story</span>
+                <span>View Anatomy</span>
               </a>
             </div>
 

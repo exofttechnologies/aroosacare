@@ -38,7 +38,7 @@ export const ProductQuickViewModal: React.FC<ProductQuickViewModalProps> = ({
 
           {/* Product Details */}
           <div className="space-y-4 text-left">
-            <span className="text-[10px] font-bold text-[#006059] uppercase tracking-wider bg-teal-50 px-3 py-1 rounded-full border border-teal-100">
+            <span className="text-[10px] font-bold text-[#006059] uppercase tracking-[0.2em] block">
               OFFICIAL AROOSA PRODUCT
             </span>
             
