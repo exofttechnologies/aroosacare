@@ -8,7 +8,7 @@ export const LifestyleBanner: React.FC = () => {
       <img
         src={`${import.meta.env.BASE_URL}images/aroosa_sunlit_forest.png`}
         alt="Aroosa gentle baby wipes in a pristine sunlit forest with clear spring water"
-        className="w-full h-full object-cover object-center scale-100 sm:scale-105 transition-transform duration-1000"
+        className="w-full h-full object-cover object-center"
       />
 
       {/* Soft Ambient Cinematic Overlays */}
@@ -19,13 +19,6 @@ export const LifestyleBanner: React.FC = () => {
 
       {/* Bottom Blend: Seamless dissolution directly into black Footer below */}
       <div className="absolute inset-x-0 bottom-0 h-32 sm:h-44 lg:h-56 bg-gradient-to-t from-black via-black/75 to-transparent pointer-events-none z-15" />
-
-      {/* Floating Animated Bubbles */}
-      <div className="absolute inset-0 pointer-events-none z-10 overflow-hidden">
-        <div className="bubble w-10 h-10 left-[15%] bottom-0 animate-float" style={{ animationDelay: '1s' }} />
-        <div className="bubble w-14 h-14 left-[45%] bottom-0 animate-float" style={{ animationDelay: '3s' }} />
-        <div className="bubble w-8 h-8 left-[75%] bottom-0 animate-float" style={{ animationDelay: '0s' }} />
-      </div>
 
       {/* Subtle Caption Pill at bottom left */}
       <div className="relative z-20 h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-end pb-8 sm:pb-12">
