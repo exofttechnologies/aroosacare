@@ -48,6 +48,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch, onOrderNow }) => {
     { name: 'Home',            href: '#hero',            id: 'home' },
     { name: 'Product Details', href: '#product-details', id: 'product-details' },
     { name: 'About',           href: '#story',           id: 'story' },
+    { name: 'Contact Us',      href: '#contact',         id: 'contact' },
   ];
 
   return (
@@ -190,6 +191,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch, onOrderNow }) => {
                 { name: 'HOME', href: '#hero', id: 'home' },
                 { name: 'PRODUCT DETAILS', href: '#product-details', id: 'product-details' },
                 { name: 'ABOUT', href: '#story', id: 'story' },
+                { name: 'CONTACT US', href: '#contact', id: 'contact' },
               ].map((link) => {
                 const isActive = activeSection === link.id || (link.id === 'home' && activeSection === 'hero');
                 return (
