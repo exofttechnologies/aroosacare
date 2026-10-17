@@ -53,21 +53,21 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch, onOrderNow }) => {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 pointer-events-none ${
           isScrolled
-            ? 'bg-slate-950/85 backdrop-blur-md border-b border-white/10 shadow-lg py-2.5 sm:py-3.5'
+            ? 'bg-transparent py-3 sm:py-4'
             : 'bg-gradient-to-b from-slate-950/60 via-slate-950/25 to-transparent py-5 sm:py-6'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="flex items-center justify-between pointer-events-auto">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative pointer-events-none">
+          <div className="flex items-center justify-between pointer-events-none">
             
             {/* Left: Aroosa Light Blue Transparent Brand Logo (Desktop only, hides on scroll) */}
             <div
               className={`hidden lg:flex items-center transition-all duration-300 ${
                 isScrolled
                   ? 'opacity-0 -translate-x-4 pointer-events-none invisible w-0 overflow-hidden'
-                  : 'opacity-100 translate-x-0 w-auto'
+                  : 'opacity-100 translate-x-0 w-auto pointer-events-auto'
               }`}
             >
               <a href="#hero" className="flex items-center group focus:outline-none shrink-0">
@@ -81,12 +81,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch, onOrderNow }) => {
               </a>
             </div>
 
-            {/* Center: Glass Pill Navigation Capsule (Desktop only - always centered) */}
+            {/* Center: Glass Pill Navigation Capsule (Desktop only - floating standalone island) */}
             <nav
-              className={`hidden lg:inline-flex items-center lg:absolute lg:left-1/2 lg:-translate-x-1/2 transition-all duration-300 rounded-full px-2 py-1.5 shadow-sm ${
+              className={`hidden lg:inline-flex items-center lg:absolute lg:left-1/2 lg:-translate-x-1/2 transition-all duration-300 rounded-full px-2 py-1.5 pointer-events-auto ${
                 isScrolled
-                  ? 'bg-white/10 backdrop-blur-md border border-white/15'
-                  : 'bg-white/20 backdrop-blur-md border border-white/30'
+                  ? 'bg-slate-950/85 backdrop-blur-md border border-white/20 shadow-2xl'
+                  : 'bg-white/20 backdrop-blur-md border border-white/30 shadow-sm'
               }`}
             >
               {navLinks.map((link) => {
@@ -112,7 +112,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch, onOrderNow }) => {
               className={`hidden lg:flex items-center space-x-2 sm:space-x-3 transition-all duration-300 ${
                 isScrolled
                   ? 'opacity-0 translate-x-4 pointer-events-none invisible w-0 overflow-hidden'
-                  : 'opacity-100 translate-x-0 w-auto'
+                  : 'opacity-100 translate-x-0 w-auto pointer-events-auto'
               }`}
             >
               {/* Search Button */}
@@ -137,7 +137,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch, onOrderNow }) => {
               </button>
             </div>
 
-            {/* Mobile Only: Hamburger Toggle (Visible ONLY on mobile, NEVER on desktop) */}
+            {/* Mobile Only: Floating Hamburger Toggle (Visible ONLY on mobile, NEVER on desktop) */}
             <button
               id="hamburger-btn"
               type="button"
@@ -146,7 +146,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch, onOrderNow }) => {
                 setMenuOpen((prev) => !prev);
               }}
               aria-label={menuOpen ? "Close Menu" : "Open Menu"}
-              className="lg:hidden ml-auto w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white/20 hover:bg-white/30 text-white border border-white/30 active:scale-95 backdrop-blur-md flex flex-col items-center justify-center gap-[4.5px] transition-all focus:outline-none shadow-sm cursor-pointer relative z-50"
+              className={`lg:hidden ml-auto pointer-events-auto w-10 h-10 sm:w-11 sm:h-11 rounded-full text-white active:scale-95 backdrop-blur-md flex flex-col items-center justify-center gap-[4.5px] transition-all focus:outline-none cursor-pointer relative z-50 ${
+                isScrolled
+                  ? 'bg-slate-950/85 hover:bg-slate-950 border border-white/20 shadow-xl'
+                  : 'bg-white/20 hover:bg-white/30 border border-white/30 shadow-sm'
+              }`}
             >
               <span className={`w-[18px] h-[2px] bg-white rounded-full transition-all duration-300 block pointer-events-none ${
                 menuOpen ? 'rotate-45 translate-y-[6.5px]' : ''
