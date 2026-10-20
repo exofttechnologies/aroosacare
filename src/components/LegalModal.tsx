@@ -34,8 +34,8 @@ export const LegalModal: React.FC<LegalModalProps> = ({ type, onClose }) => {
         <div className="space-y-4 text-xs sm:text-sm text-slate-600 leading-relaxed">
           <p>
             At <strong>Aroosa Care</strong> (accessible from{' '}
-            <a href="https://exofttechnologies.github.io/aroosacare/" className="text-teal-700 underline">
-              https://exofttechnologies.github.io/aroosacare/
+            <a href="https://thearoosa.com/" className="text-teal-700 underline">
+              https://thearoosa.com/
             </a>
             ), the privacy of our visitors and customers is of utmost importance. This Privacy Policy outlines the types of information we collect and how we use it.
           </p>

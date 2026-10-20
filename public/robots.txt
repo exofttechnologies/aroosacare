@@ -1,5 +1,5 @@
 # Robots.txt for Aroosa Care
-# Production URL: https://exofttechnologies.github.io/aroosacare/
+# Production URL: https://thearoosa.com/
 
 User-agent: *
 Allow: /
@@ -8,4 +8,4 @@ Allow: /
 Disallow:
 
 # XML Sitemap Location
-Sitemap: https://exofttechnologies.github.io/aroosacare/sitemap.xml
+Sitemap: https://thearoosa.com/sitemap.xml
