@@ -37,10 +37,11 @@ export default {
         }
       },
       fontFamily: {
-        sans: ['Outfit', 'Plus Jakarta Sans', 'Inter', 'sans-serif'],
-        display: ['Outfit', 'sans-serif'],
-        serif: ['"Playfair Display"', '"Cormorant Garamond"', 'serif'],
-        editorial: ['"Cormorant Garamond"', 'serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['Inter', 'system-ui', 'sans-serif'],
+        manrope: ['Manrope', 'sans-serif'],
+        serif: ['Inter', 'system-ui', 'sans-serif'],
+        editorial: ['Inter', 'system-ui', 'sans-serif'],
       },
       borderRadius: {
         '4xl': '2rem',

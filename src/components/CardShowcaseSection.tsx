@@ -13,8 +13,8 @@ interface CardItem {
 const CARDS: CardItem[] = [
   {
     id: 'pure-care-dark-forest',
-    title: 'Pure Care for Little Ones',
-    subtitle: "Aroosa wet wipes are made with 99% pure water, chamomile, vitamin E and aloe — keeping your baby's skin clean, soft and protected.",
+    title: 'Aroosa Baby Wipes Signature Formula',
+    subtitle: "Aroosa baby wipes are made with 99.9% pure water, chamomile, vitamin E and aloe — keeping your baby's skin clean, soft and protected.",
     badgeTag: 'SIGNATURE FORMULA',
     imageSrc: `${import.meta.env.BASE_URL}images/aroosa_card_showcase_1.jpg`,
     bgColor: 'bg-[#183d2a]',
@@ -29,7 +29,7 @@ const CARDS: CardItem[] = [
   },
   {
     id: 'plant-based-fabric-studio',
-    title: '100% Natural Plant-Based Fabric',
+    title: '100% Plant-Based Aroosa Wipes Fabric',
     subtitle: 'Made entirely from naturally sourced, plant-derived fibers without synthetic materials. Kind to sensitive baby skin and compostable.',
     badgeTag: 'PLANT-BASED FIBERS',
     imageSrc: `${import.meta.env.BASE_URL}images/aroosa_card_showcase_3.jpg`,
@@ -37,8 +37,8 @@ const CARDS: CardItem[] = [
   },
   {
     id: 'water-tested-purity-mint',
-    title: '99% Pure Water · EWG Verified',
-    subtitle: 'Dermatologist tested hypoallergenic wipes with 99% pure water formulation for newborn and sensitive baby skin.',
+    title: '99.9% Pure Water Aroosa Baby Wipes',
+    subtitle: 'Dermatologist tested hypoallergenic wipes with 99.9% pure water formulation for newborn and sensitive baby skin.',
     badgeTag: 'CLINICALLY TESTED',
     imageSrc: `${import.meta.env.BASE_URL}images/aroosa_card_showcase_4.jpg`,
     bgColor: 'bg-[#E3F4F1]',
@@ -132,7 +132,7 @@ export const CardShowcaseSection: React.FC = () => {
           <p className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.25em] text-teal-800 mb-2.5">
             Aroosa Care · Product Showcase
           </p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-normal text-slate-950 tracking-tight leading-[1.12]">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-950 tracking-tight leading-[1.12]">
             Pure Care for Little Ones
           </h2>
           <p className="text-xs sm:text-sm text-slate-600 font-normal leading-relaxed mt-3 max-w-lg mx-auto">
@@ -236,7 +236,7 @@ export const CardShowcaseSection: React.FC = () => {
             <span className="inline-block text-[11px] font-bold tracking-[0.25em] text-teal-800 uppercase mb-2">
               {activeCard.badgeTag}
             </span>
-            <h3 className="text-lg font-bold text-slate-900 font-serif leading-tight">
+            <h3 className="text-lg font-bold text-slate-900 leading-tight">
               {activeCard.title}
             </h3>
             <p className="text-xs text-slate-600 mt-1 leading-relaxed line-clamp-2">
@@ -247,7 +247,7 @@ export const CardShowcaseSection: React.FC = () => {
           {/* Explore Product Quick Link */}
           <div className="mt-5">
             <a
-              href="#products"
+              href="#product-details"
               className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-teal-800 hover:text-teal-950 transition-colors group"
             >
               <span>Explore all specifications</span>

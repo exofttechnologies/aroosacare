@@ -24,7 +24,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch, onOrderNow }) => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 30);
 
-      const sections = ['hero', 'product-details', 'story', 'contact'];
+      const sections = ['hero', 'product-details', 'story', 'faq', 'contact'];
       const scrollPosition = window.scrollY + 140;
 
       for (const sectionId of sections) {
@@ -48,6 +48,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch, onOrderNow }) => {
     { name: 'Home',            href: '#hero',            id: 'home' },
     { name: 'Product Details', href: '#product-details', id: 'product-details' },
     { name: 'About',           href: '#story',           id: 'story' },
+    { name: 'FAQ',             href: '#faq',             id: 'faq' },
     { name: 'Contact Us',      href: '#contact',         id: 'contact' },
   ];
 
@@ -63,7 +64,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch, onOrderNow }) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative pointer-events-none">
           <div className="flex items-center justify-between pointer-events-none">
             
-            {/* Left: Aroosa Light Blue Transparent Brand Logo */}
+            {/* Left: Aroosa White Brand Logo (Visible on Hero, fades on scroll) */}
             <div
               className={`flex items-center transition-all duration-300 ${
                 isScrolled
@@ -73,7 +74,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch, onOrderNow }) => {
             >
               <a href="#hero" className="flex items-center group focus:outline-none shrink-0">
                 <img
-                  src={`${import.meta.env.BASE_URL}images/Aroosa_logo_light_blue_transparent.png`}
+                  src={`${import.meta.env.BASE_URL}images/aroosa_white_logo.png`}
                   alt="Aroosa"
                   className={`w-auto object-contain drop-shadow-md select-none transition-all duration-200 hover:scale-105 ${
                     isScrolled ? 'h-6 sm:h-7' : 'h-7 sm:h-8 md:h-10 lg:h-11'
@@ -191,6 +192,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch, onOrderNow }) => {
                 { name: 'HOME', href: '#hero', id: 'home' },
                 { name: 'PRODUCT DETAILS', href: '#product-details', id: 'product-details' },
                 { name: 'ABOUT', href: '#story', id: 'story' },
+                { name: 'FAQ', href: '#faq', id: 'faq' },
                 { name: 'CONTACT US', href: '#contact', id: 'contact' },
               ].map((link) => {
                 const isActive = activeSection === link.id || (link.id === 'home' && activeSection === 'hero');

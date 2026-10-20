@@ -1,0 +1,11 @@
+# Robots.txt for Aroosa Care
+# Production URL: https://exofttechnologies.github.io/aroosacare/
+
+User-agent: *
+Allow: /
+
+# Disallow nothing - all public pages are indexable
+Disallow:
+
+# XML Sitemap Location
+Sitemap: https://exofttechnologies.github.io/aroosacare/sitemap.xml

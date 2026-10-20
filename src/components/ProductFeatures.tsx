@@ -37,19 +37,19 @@ export const ProductFeatures: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-cream-50 via-sky-50/50 to-cream-50 relative">
+    <section id="features" className="py-20 bg-gradient-to-b from-cream-50 via-sky-50/50 to-cream-50 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
           <p className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.25em] text-teal-800 mb-3">
-            THOUGHTFUL DETAILS
+            THOUGHTFUL DETAILS · AROOSA BABY CARE
           </p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display text-slate-900 tracking-tight">
-            Gentle by Nature. Thoughtful by Design.
+            Aroosa Wipes Features: Gentle by Nature, Thoughtful by Design
           </h2>
           <p className="text-sm sm:text-base text-slate-600 font-normal">
-            Every feature is crafted to make your daily routine softer, simpler, and more reassuring.
+            Every feature of Aroosa baby wipes is crafted to make your daily routine softer, simpler, and more reassuring.
           </p>
         </div>
 
@@ -70,10 +70,10 @@ export const ProductFeatures: React.FC = () => {
                       {feature.description}
                     </p>
                   </div>
-                  <div className="mt-6 pt-4 border-t border-sky-100/70 flex items-center text-xs font-medium text-sky-600 group-hover:text-sky-800">
-                    <span>Learn more</span>
+                  <a href="#product-details" className="mt-6 pt-4 border-t border-sky-100/70 flex items-center text-xs font-medium text-sky-600 group-hover:text-sky-800">
+                    <span>Explore specifications</span>
                     <span className="ml-1 group-hover:translate-x-1.5 transition-transform duration-200">→</span>
-                  </div>
+                  </a>
               </div>
             );
           })}

@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
-import { ArrowRight, Phone, Mail, Check, Facebook, Twitter, Linkedin } from 'lucide-react';
+import { ArrowRight, Phone, Mail, Check } from 'lucide-react';
 
-export const Footer: React.FC = () => {
+interface FooterProps {
+  onOpenLegal?: (type: 'privacy' | 'terms' | 'shipping') => void;
+}
+
+export const Footer: React.FC<FooterProps> = ({ onOpenLegal }) => {
   const [bottomEmail, setBottomEmail] = useState('');
   const [bottomSubscribed, setBottomSubscribed] = useState(false);
 
@@ -32,13 +36,16 @@ export const Footer: React.FC = () => {
               <a href="#hero" className="inline-flex items-center gap-2 group">
                 <img
                   src={`${import.meta.env.BASE_URL}images/Aroosa_logo_light_blue_transparent.png`}
-                  alt="Aroosa Care"
+                  alt="Aroosa Care Official Brand Logo"
+                  width={150}
+                  height={40}
+                  loading="lazy"
                   className="h-9 sm:h-10 w-auto object-contain drop-shadow-xs group-hover:scale-105 transition-transform"
                 />
               </a>
 
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-sm font-normal">
-                Pure, gentle baby wipes crafted with 99.9% ultra-purified water and organic plant fibers. Dermatologically tested for your newborn&apos;s delicate skin.
+                Pure, gentle baby wipes crafted with 99.9% ultra-purified water, chamomile, aloe vera, and almond essence. Dermatologically tested for your newborn&apos;s delicate everyday care.
               </p>
 
               {/* Mini Email Capsule with Sleek Black Button */}
@@ -52,12 +59,12 @@ export const Footer: React.FC = () => {
                     required
                     value={bottomEmail}
                     onChange={(e) => setBottomEmail(e.target.value)}
-                    placeholder="Your email"
+                    placeholder="Your email address"
                     className="w-full px-3.5 py-2 text-xs sm:text-sm text-slate-900 placeholder-slate-400 focus:outline-none bg-transparent"
                   />
                   <button
                     type="submit"
-                    aria-label="Submit email"
+                    aria-label="Submit email for Aroosa updates"
                     className="flex-shrink-0 bg-slate-950 hover:bg-slate-800 active:scale-95 text-white rounded-lg sm:rounded-xl p-2 transition-transform duration-200 shadow-sm cursor-pointer"
                   >
                     {bottomSubscribed ? (
@@ -78,13 +85,13 @@ export const Footer: React.FC = () => {
               </h4>
               <ul className="space-y-2.5 text-xs sm:text-sm text-slate-600">
                 <li>
-                  <a href="#products" className="hover:text-slate-950 transition-colors flex items-center gap-1.5 group">
+                  <a href="#product-details" className="hover:text-slate-950 transition-colors flex items-center gap-1.5 group">
                     <span className="w-1.5 h-1.5 rounded-full bg-slate-300 group-hover:bg-slate-900 group-hover:scale-125 transition-transform" />
                     <span>Pure Wet Wipes (72 Wipes Pack)</span>
                   </a>
                 </li>
                 <li>
-                  <a href="#products" className="hover:text-slate-950 transition-colors flex items-center gap-1.5 group">
+                  <a href="#product-details" className="hover:text-slate-950 transition-colors flex items-center gap-1.5 group">
                     <span className="w-1.5 h-1.5 rounded-full bg-slate-300 group-hover:bg-slate-900 group-hover:scale-125 transition-transform" />
                     <span>99.9% Ultra-Purified Water Wipes</span>
                   </a>
@@ -92,11 +99,11 @@ export const Footer: React.FC = () => {
                 <li>
                   <a href="#card-showcase" className="hover:text-slate-950 transition-colors flex items-center gap-1.5 group">
                     <span className="w-1.5 h-1.5 rounded-full bg-slate-300 group-hover:bg-slate-900 group-hover:scale-125 transition-transform" />
-                    <span>100% Plant-Based Bamboo Fiber</span>
+                    <span>100% Plant-Based Aroosa Wipes</span>
                   </a>
                 </li>
                 <li>
-                  <a href="#products" className="hover:text-slate-950 transition-colors flex items-center gap-1.5 group">
+                  <a href="#product-details" className="hover:text-slate-950 transition-colors flex items-center gap-1.5 group">
                     <span className="w-1.5 h-1.5 rounded-full bg-slate-300 group-hover:bg-slate-900 group-hover:scale-125 transition-transform" />
                     <span>Organic Chamomile &amp; Aloe Vera</span>
                   </a>
@@ -108,9 +115,15 @@ export const Footer: React.FC = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="#products" className="hover:text-slate-950 transition-colors flex items-center gap-1.5 group">
+                  <a href="#faq" className="hover:text-slate-950 transition-colors flex items-center gap-1.5 group">
                     <span className="w-1.5 h-1.5 rounded-full bg-slate-300 group-hover:bg-slate-900 group-hover:scale-125 transition-transform" />
-                    <span>Double Moisture Lock Lid Cap</span>
+                    <span>Frequently Asked Questions</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/aroosacare/product/" className="hover:text-teal-900 transition-colors flex items-center gap-1.5 group font-medium text-teal-700">
+                    <span className="w-1.5 h-1.5 rounded-full bg-teal-600 group-hover:scale-125 transition-transform" />
+                    <span>Dedicated Product Page &rarr;</span>
                   </a>
                 </li>
               </ul>
@@ -160,13 +173,12 @@ export const Footer: React.FC = () => {
               </ul>
             </div>
 
-            {/* Column 4 (span 2): Social Links */}
+            {/* Column 4 (span 2): Verified Social Links */}
             <div className="lg:col-span-2 text-left space-y-3.5">
               <h4 className="text-xs font-bold text-slate-950 tracking-wider uppercase font-display">
                 Connect
               </h4>
               <ul className="space-y-2.5 text-xs sm:text-sm text-slate-600">
-                {/* Instagram Icon */}
                 <li>
                   <a
                     href="https://www.instagram.com/aroosacare/"
@@ -189,52 +201,36 @@ export const Footer: React.FC = () => {
                     </div>
                   </a>
                 </li>
-
-                <li>
-                  <a
-                    href="#"
-                    className="flex items-center gap-2.5 hover:text-slate-950 transition-colors group"
-                  >
-                    <div className="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 border border-slate-200 flex items-center justify-center text-slate-800 transition-all flex-shrink-0">
-                      <Facebook className="w-4 h-4" />
-                    </div>
-                    <span>Facebook</span>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="flex items-center gap-2.5 hover:text-slate-950 transition-colors group"
-                  >
-                    <div className="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 border border-slate-200 flex items-center justify-center text-slate-800 transition-all flex-shrink-0">
-                      <Twitter className="w-4 h-4" />
-                    </div>
-                    <span>Twitter</span>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="flex items-center gap-2.5 hover:text-slate-950 transition-colors group"
-                  >
-                    <div className="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 border border-slate-200 flex items-center justify-center text-slate-800 transition-all flex-shrink-0">
-                      <Linkedin className="w-4 h-4" />
-                    </div>
-                    <span>LinkedIn</span>
-                  </a>
-                </li>
               </ul>
             </div>
 
           </div>
 
-          {/* Bottom Copyright centered text */}
+          {/* Bottom Copyright centered text & Legal Links */}
           <div className="pt-8 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
             <p>© Copyright 2026 by Aroosa Care. All rights reserved.</p>
             <div className="flex items-center gap-6 text-xs text-slate-500">
-              <a href="#hero" className="hover:text-slate-950 transition-colors">Privacy Policy</a>
-              <a href="#hero" className="hover:text-slate-950 transition-colors">Terms of Service</a>
-              <a href="#hero" className="hover:text-slate-950 transition-colors">Shipping &amp; Returns</a>
+              <button
+                type="button"
+                onClick={() => onOpenLegal?.('privacy')}
+                className="hover:text-slate-950 transition-colors cursor-pointer bg-transparent border-none p-0 text-xs text-slate-500"
+              >
+                Privacy Policy
+              </button>
+              <button
+                type="button"
+                onClick={() => onOpenLegal?.('terms')}
+                className="hover:text-slate-950 transition-colors cursor-pointer bg-transparent border-none p-0 text-xs text-slate-500"
+              >
+                Terms of Service
+              </button>
+              <button
+                type="button"
+                onClick={() => onOpenLegal?.('shipping')}
+                className="hover:text-slate-950 transition-colors cursor-pointer bg-transparent border-none p-0 text-xs text-slate-500"
+              >
+                Shipping &amp; Returns
+              </button>
             </div>
           </div>
 
@@ -244,4 +240,3 @@ export const Footer: React.FC = () => {
     </footer>
   );
 };
-

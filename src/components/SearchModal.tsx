@@ -15,27 +15,11 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose, onQui
   const mockProducts = [
     {
       id: 'aroosa-wet-wipes-72',
-      name: 'Aroosa Wet Wipes (72 Wipes)',
-      description: '99.99% pure water & organic cotton wipes for delicate baby skin',
+      name: 'Aroosa Baby Wipes (72 Wipes Pack)',
+      description: '99.9% pure water & organic cotton wipes for delicate baby skin',
       price: '$4.99',
       image: `${import.meta.env.BASE_URL}images/PHOTO-2026-10-05-19-03-23.jpg`,
       category: 'Wipes',
-    },
-    {
-      id: 'coming-sensitive',
-      name: 'Sensitive Care Wipes (Coming Soon)',
-      description: 'Extra-delicate formula for newborn skin',
-      price: 'Coming Soon',
-      image: `${import.meta.env.BASE_URL}images/PHOTO-2026-10-05-19-03-24.jpg`,
-      category: 'Upcoming',
-    },
-    {
-      id: 'coming-water',
-      name: 'Pure Water Wipes (Coming Soon)',
-      description: '99% pure water wipes',
-      price: 'Coming Soon',
-      image: `${import.meta.env.BASE_URL}images/PHOTO-2026-10-05-19-03-26.jpg`,
-      category: 'Upcoming',
     },
   ];
 

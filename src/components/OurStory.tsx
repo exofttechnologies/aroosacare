@@ -22,7 +22,10 @@ export const OurStory: React.FC<OurStoryProps> = () => {
               <div className="relative rounded-3xl overflow-hidden shadow-md border border-slate-200/80">
                 <img
                   src={`${import.meta.env.BASE_URL}images/mother_tenderly_hold_baby.jpg`}
-                  alt="Mother tenderly holding newborn baby"
+                  alt="Mother tenderly holding newborn baby — Aroosa Baby Care brand story"
+                  width={750}
+                  height={500}
+                  loading="lazy"
                   className="w-full h-auto object-cover hover:scale-103 transition-transform duration-700"
                 />
               </div>
@@ -35,7 +38,7 @@ export const OurStory: React.FC<OurStoryProps> = () => {
                   </div>
                   <div>
                     <p className="text-xs sm:text-[13px] text-slate-800 italic font-medium leading-relaxed">
-                      "Parenthood is made of thousands of soft, quiet moments. We build wipes to make every moment reassuring."
+                      "Parenthood is made of thousands of soft, quiet moments. We build Aroosa wipes to make every moment reassuring."
                     </p>
                     <span className="text-[11px] font-bold text-sky-600 mt-2 block">
                       — The Aroosa Care Promise
@@ -51,7 +54,7 @@ export const OurStory: React.FC<OurStoryProps> = () => {
             
             <div>
               <p className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.25em] text-teal-800 mb-2">
-                OUR BRAND JOURNEY
+                OUR BRAND JOURNEY · ABOUT AROOSA
               </p>
             </div>
 
@@ -63,7 +66,7 @@ export const OurStory: React.FC<OurStoryProps> = () => {
 
             <div>
               <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
-                We believe baby care should feel simple, gentle and reassuring. Our wipes are created with the everyday moments of parenthood in mind — from quick cleanups to those little moments that deserve extra care.
+                We believe gentle baby care should feel simple, soothing and reassuring. Aroosa wipes are created with the everyday moments of parenthood in mind — from newborn diaper cleanups to little mealtime adventures that deserve tender care.
               </p>
             </div>
 
@@ -72,11 +75,11 @@ export const OurStory: React.FC<OurStoryProps> = () => {
               <div className="grid grid-cols-2 gap-4 pt-2">
                 <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/80">
                   <span className="text-2xl font-bold text-slate-900 font-display">100%</span>
-                  <p className="text-xs text-slate-600 font-medium mt-1">Dedicated to Gentle Baby Care</p>
+                  <p className="text-xs text-slate-600 font-medium mt-1">Dedicated to Aroosa Baby Care</p>
                 </div>
                 <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/80">
                   <span className="text-2xl font-bold text-slate-900 font-display">Pure</span>
-                  <p className="text-xs text-slate-600 font-medium mt-1">Safe Comfort in Every Pack</p>
+                  <p className="text-xs text-slate-600 font-medium mt-1">Safe Comfort in Every Aroosa Pack</p>
                 </div>
               </div>
             </div>

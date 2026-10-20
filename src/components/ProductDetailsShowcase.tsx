@@ -27,7 +27,7 @@ export const ProductDetailsShowcase: React.FC<ProductDetailsShowcaseProps> = ({ 
 
   const tooltips: Record<string, { title: string; desc: string }> = {
     water: {
-      title: '99% Pure Water Formula',
+      title: '99.9% Pure Water Formula',
       desc: 'Purified through an 8-stage reverse-osmosis filtration process to guarantee zero heavy metals, chlorine, or chemical impurities.',
     },
     fabric: {
@@ -59,13 +59,13 @@ export const ProductDetailsShowcase: React.FC<ProductDetailsShowcaseProps> = ({ 
         {/* Section Heading */}
         <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
           <p className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.25em] text-teal-800 mb-3">
-            Aroosa Care · Product Anatomy
+            Aroosa Wipes Product · Product Anatomy
           </p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-normal text-slate-950 tracking-tight leading-[1.12]">
-            Every Detail, Made with Care
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-950 tracking-tight leading-[1.12]">
+            Aroosa Baby Wipes: Every Detail, Made with Care
           </h2>
           <p className="text-sm sm:text-base text-slate-600 font-normal leading-relaxed mt-3.5 max-w-lg mx-auto">
-            From 99% pharmaceutical-grade pure water to 3-fold cloud-soft cotton, discover why parents trust Aroosa for their newborns.
+            From 99.9% pharmaceutical-grade pure water to 3-fold cloud-soft cotton, discover why parents trust Aroosa baby wipes for their newborns.
           </p>
         </div>
 
@@ -77,7 +77,10 @@ export const ProductDetailsShowcase: React.FC<ProductDetailsShowcaseProps> = ({ 
           <div className="relative w-full aspect-[1/1] sm:aspect-[1.05/1] mx-auto flex items-center justify-center">
             <img
               src={`${import.meta.env.BASE_URL}images/aroosa_product_details_showcase.jpg`}
-              alt="Aroosa Baby Wipes Detailed Anatomy"
+              alt="Aroosa Baby Wipes Product Anatomy - 99.9% Pure Water, Aloe, Almond, and 72-Pack Moisture Lid"
+              width={800}
+              height={800}
+              loading="lazy"
               className="w-full h-full object-contain select-none transition-transform duration-700 hover:scale-[1.01]"
             />
 
@@ -90,12 +93,12 @@ export const ProductDetailsShowcase: React.FC<ProductDetailsShowcaseProps> = ({ 
               className="absolute left-[5%] bottom-[4%] sm:left-[6%] sm:bottom-[5%] w-[24%] h-[7%] rounded-full bg-transparent hover:bg-black/10 focus:outline-none cursor-pointer transition-all"
             />
 
-            {/* Interactive Hotspot 2: Top-left "+" button near 99% pure water */}
+            {/* Interactive Hotspot 2: Top-left "+" button near 99.9% pure water */}
             <button
               type="button"
               onClick={() => setActiveTooltip((prev) => (prev === 'water' ? null : 'water'))}
-              title="Tap for 99% Pure Water info"
-              aria-label="99% Pure water details"
+              title="Tap for 99.9% Pure Water info"
+              aria-label="99.9% Pure water details"
               className="absolute left-[27%] top-[29%] sm:left-[27.5%] sm:top-[29.5%] w-[8%] h-[8%] rounded-full bg-transparent hover:bg-emerald-500/20 focus:outline-none cursor-pointer transition-all"
             />
 
@@ -157,13 +160,13 @@ export const ProductDetailsShowcase: React.FC<ProductDetailsShowcaseProps> = ({ 
         {/* ================================================================ */}
         <div className="mt-12 sm:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto border-t border-slate-200/80 pt-8">
           
-          {/* Pillar 1: 99% Pure Water */}
+          {/* Pillar 1: 99.9% Pure Water */}
           <div className="space-y-2">
             <div className="w-9 h-9 rounded-xl bg-teal-50 text-teal-800 flex items-center justify-center">
               <Droplets className="w-4 h-4" />
             </div>
             <h4 className="text-sm font-bold text-slate-900 font-display">
-              99% Pure Water
+              99.9% Pure Water
             </h4>
             <p className="text-xs text-slate-600 leading-relaxed font-normal">
               Pharmaceutical-grade filtered water that cleans gently without stripping natural skin moisture.
