@@ -1,13 +1,25 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
-  "rewrites": [
+  "redirects": [
     {
       "source": "/product",
-      "destination": "/product/index.html"
+      "destination": "/products/aroosa-baby-wipes",
+      "permanent": true
     },
     {
-      "source": "/((?!assets/|images/|product/|favicon|robots\\.txt|sitemap\\.xml).*)",
+      "source": "/product/",
+      "destination": "/products/aroosa-baby-wipes",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/products/aroosa-baby-wipes",
+      "destination": "/products/aroosa-baby-wipes/index.html"
+    },
+    {
+      "source": "/((?!assets/|images/|products/|product/|favicon|robots\\.txt|sitemap\\.xml|site\\.webmanifest).*)",
       "destination": "/index.html"
     }
   ],

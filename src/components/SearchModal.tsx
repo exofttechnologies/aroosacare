@@ -17,7 +17,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose, onQui
       id: 'aroosa-wet-wipes-72',
       name: 'Aroosa Baby Wipes (72 Wipes Pack)',
       description: '99.9% pure water & organic cotton wipes for delicate baby skin',
-      price: '$4.99',
+      badge: '72 Pcs',
       image: `${import.meta.env.BASE_URL}images/PHOTO-2026-10-05-19-03-23.jpg`,
       category: 'Wipes',
     },
@@ -77,7 +77,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose, onQui
                   </div>
                 </div>
                 <div className="text-right">
-                  <span className="text-xs font-bold text-sky-600">{prod.price}</span>
+                  <span className="text-xs font-semibold text-teal-700 bg-teal-50 px-2.5 py-1 rounded-full border border-teal-100">{prod.badge}</span>
                 </div>
               </div>
             ))

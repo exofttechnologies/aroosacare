@@ -121,7 +121,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegal }) => {
                   </a>
                 </li>
                 <li>
-                  <a href={`${import.meta.env.BASE_URL}product/`} className="hover:text-teal-900 transition-colors flex items-center gap-1.5 group font-medium text-teal-700">
+                  <a href={`${import.meta.env.BASE_URL}products/aroosa-baby-wipes`} className="hover:text-teal-900 transition-colors flex items-center gap-1.5 group font-medium text-teal-700">
                     <span className="w-1.5 h-1.5 rounded-full bg-teal-600 group-hover:scale-125 transition-transform" />
                     <span>Dedicated Product Page &rarr;</span>
                   </a>

@@ -12,7 +12,6 @@ export const ProductDetailsShowcase: React.FC<ProductDetailsShowcaseProps> = ({ 
   const defaultProduct = {
     id: 'aroosa-baby-wipes-72',
     name: 'Aroosa Baby Wipes (72 Pcs)',
-    price: '$4.99',
     packSize: '72 Pcs Extra Soft Fabric Pack',
     image: `${import.meta.env.BASE_URL}images/PHOTO-2026-10-05-19-03-23.jpg`,
   };

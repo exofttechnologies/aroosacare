@@ -2,14 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   
-  <!-- Homepage: Aroosa Baby Wipes | Gentle Care for Little Ones -->
+  <!-- Homepage: Official Aroosa Website -->
   <url>
     <loc>https://thearoosa.com/</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://thearoosa.com/images/realmobile_hero.png</image:loc>
+      <image:loc>https://thearoosa.com/images/aroosa-baby-wipes-lifestyle-hero.png</image:loc>
       <image:title>Aroosa Baby Wipes 72 Pcs Pack - 99.9% Pure Water</image:title>
       <image:caption>Aroosa baby wipes packaging with 99.9% pure water, pleasant fragrance, aloe vera, and almond essence.</image:caption>
     </image:image>
@@ -19,37 +19,40 @@
       <image:caption>Pure, soft, and gentle Aroosa baby wipes for everyday newborn diaper cleanups.</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://thearoosa.com/images/aroosa_product_details_showcase.jpg</image:loc>
+      <image:loc>https://thearoosa.com/images/aroosa-baby-wipes-anatomy.jpg</image:loc>
       <image:title>Aroosa Wipes Product Anatomy and Features</image:title>
       <image:caption>Detailed product anatomy of Aroosa baby wipes showing pure water formulation, cloud cotton fabric, and moisture seal lid.</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://thearoosa.com/images/aroosa_white_logo.png</image:loc>
-      <image:title>Aroosa Care Official Brand Logo</image:title>
+      <image:loc>https://thearoosa.com/favicon-512x512.png</image:loc>
+      <image:title>Aroosa Brand Logo Mark</image:title>
     </image:image>
     <image:image>
       <image:loc>https://thearoosa.com/images/mother_tenderly_hold_baby.jpg</image:loc>
-      <image:title>Our Story - Aroosa Care Inspired by a Mother's Touch</image:title>
+      <image:title>About Aroosa - Inspired by a Mother's Tender Touch</image:title>
     </image:image>
   </url>
 
-  <!-- Dedicated Product Details Page: Aroosa Baby Wipes (72 Pcs Pack) -->
+  <!-- Dedicated Product Page: Aroosa Baby Wipes (72 Pcs Pack) -->
   <url>
-    <loc>https://thearoosa.com/product/</loc>
-    <lastmod>2026-10-20</lastmod>
+    <loc>https://thearoosa.com/products/aroosa-baby-wipes</loc>
+    <lastmod>2026-10-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
-      <image:loc>https://thearoosa.com/images/realmobile_hero.png</image:loc>
-      <image:title>Aroosa Baby Wipes (72 Pcs Pack)</image:title>
+      <image:loc>https://thearoosa.com/images/aroosa-baby-wipes-72-pack.jpg</image:loc>
+      <image:title>Aroosa Baby Wipes 72 Pcs Pack Official Packaging</image:title>
+      <image:caption>Official Aroosa Baby Wipes front packaging showing 99.9% pure water, aloe lotion, almond, and resealable flip lid.</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://thearoosa.com/images/aroosa_product_details_showcase.jpg</image:loc>
-      <image:title>Aroosa Baby Wipes Product Anatomy</image:title>
+      <image:loc>https://thearoosa.com/images/aroosa-baby-wipes-anatomy.jpg</image:loc>
+      <image:title>Aroosa Baby Wipes Product Anatomy and Features</image:title>
+      <image:caption>Aroosa baby wipes formula breakdown: 99.9% pure water, aloe and almond lotion, 3-fold cloud cotton fabric, and snap lid.</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://thearoosa.com/images/PHOTO-2026-10-05-19-03-23.jpg</image:loc>
-      <image:title>Aroosa Baby Wipes Pack Close-up</image:title>
+      <image:loc>https://thearoosa.com/images/aroosa-baby-wipes-packaging-angle.jpg</image:loc>
+      <image:title>Aroosa Baby Wipes Packaging Side Angle</image:title>
+      <image:caption>Side angle view of Aroosa baby wipes 72-pack showing protective seal and moisture preservation.</image:caption>
     </image:image>
   </url>
 

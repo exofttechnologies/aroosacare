@@ -65,8 +65,11 @@ export const OurStory: React.FC<OurStoryProps> = () => {
             </div>
 
             <div>
-              <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
-                We believe gentle baby care should feel simple, soothing and reassuring. Aroosa wipes are created with the everyday moments of parenthood in mind — from newborn diaper cleanups to little mealtime adventures that deserve tender care.
+              <p className="text-sm sm:text-base text-slate-700 leading-relaxed font-normal">
+                Aroosa is an independent baby care brand dedicated to creating pure, gentle essentials for newborns and growing infants. Our flagship product, <strong className="font-semibold text-slate-900">Aroosa Baby Wipes</strong>, is thoughtfully formulated with 99.9% pure water, organic aloe vera, almond essence, and chamomile extract to protect delicate skin without alcohol or harsh chemicals.
+              </p>
+              <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal mt-3">
+                From newborn diaper cleanups to little mealtime messes, every 72-piece pack of Aroosa wipes is designed to deliver comforting softness, dependable thickness, and complete peace of mind for every parent.
               </p>
             </div>
 

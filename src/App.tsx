@@ -95,7 +95,7 @@ export function App() {
                 {[
                   { stat: '99.9%', label: 'Pure Water Formula' },
                   { stat: '100%', label: 'Cloud-Soft Pure Cotton' },
-                  { stat: '4.9 ★', label: 'Rated by 348+ Parents' },
+                  { stat: '0%', label: 'Alcohol & Harsh Chemicals' },
                   { stat: '72', label: 'Wipes Per Pack' },
                 ].map(({ stat, label }) => (
                   <div key={label} className="flex flex-col border-t border-slate-200 pt-4">
